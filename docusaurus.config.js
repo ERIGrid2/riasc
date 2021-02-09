@@ -1,19 +1,21 @@
 module.exports = {
   title: 'RIasC',
-  tagline: 'Research Infrastructure as Cloud',
+  tagline: 'Research Infrastructure as Code',
   url: 'https://riasc.fein-aachen.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logos/riasc.svg',
   organizationName: 'RIasCode', // Usually your GitHub org/user name.
   projectName: 'website', // Usually your repo name.
   themeConfig: {
+    hideableSidebar: true,
     navbar: {
-      title: 'My Site',
+      title: 'RIasC',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'RIasC Logo',
+        src: 'img/logos/riasc.svg',
+        srcDark: 'img/logos/riasc-dark.svg'
       },
       items: [
         {
@@ -24,7 +26,7 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/riascode/',
           label: 'GitHub',
           position: 'right',
         },
@@ -37,12 +39,12 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
+              label: 'Introduction',
               to: 'docs/',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
+              label: 'Getting started',
+              to: 'docs/getting-started/',
             },
           ],
         },
@@ -50,16 +52,12 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Institute for Automation Complex Power Systems',
+              href: 'https://acs.eonerc.rwth-aachen.de',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'ERIGrid Project',
+              href: 'https://erigrid2.eu',
             },
           ],
         },
@@ -77,8 +75,11 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} RWTH Aachen University, Institute for Automation Complex Power Systems.`,
     },
+    colorMode: {
+        defaultMode: 'light',
+    }
   },
   presets: [
     [

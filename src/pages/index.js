@@ -12,40 +12,89 @@ const features = [
     imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        RIasC was designed from the ground up to be easily installed and
+        used to get your experiments up and running quickly.
       </>
     ),
   },
   {
     title: 'Focus on What Matters',
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    imageUrl: 'img/speedometer.png',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        RIasC accelerateds your time to experiment in distributed Research Infrastructure setups by automation.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: 'Powered by open-source cloud technology',
+    imageUrl: 'img/icons/kubernetes.svg',
+    imageSize: 120,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        RIasC is powered solely by open source software enabling you to describe complex scenarios in a repeatable manner in the form of code.
       </>
     ),
   },
+//   {
+//     title: 'Powered by Kubernetes',
+//     imageUrl: 'img/icons/kubernetes.svg',
+//     imageSize: 120,
+//     description: (
+//       <>
+//         Extend or customize your website layout by reusing React. Docusaurus can
+//         be extended while reusing the same header and footer.
+//       </>
+//     ),
+//   },
+//   {
+//     title: 'Powered by Wireguard',
+//     imageUrl: 'img/icons/wireguard.svg',
+//     imageSize: 120,
+//     description: (
+//       <>
+//         Extend or customize your website layout by reusing React. Docusaurus can
+//         be extended while reusing the same header and footer.
+//       </>
+//     ),
+//   },
+//   {
+//     title: 'Powered by Kilo',
+//     imageUrl: 'img/icons/kilo.svg',
+//     imageSize: 120,
+//     description: (
+//       <>
+//         Extend or customize your website layout by reusing React. Docusaurus can
+//         be extended while reusing the same header and footer.
+//       </>
+//     ),
+//   },
+//   {
+//     title: 'Powered by K3S',
+//     imageUrl: 'img/logos/k3s.svg',
+//     imageSize: 200,
+//     description: (
+//       <>
+//         Extend or customize your website layout by reusing React. Docusaurus can
+//         be extended while reusing the same header and footer.
+//       </>
+//     ),
+//   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Feature({imageUrl, imageSize, title, description}) {
   const imgUrl = useBaseUrl(imageUrl);
+  imageSize = imageSize || 200;
+  const imgStyle = {
+      'width': imageSize,
+      'height': imageSize,
+      'margin': (200 - imageSize)/2
+  }
   return (
     <div className={clsx('col col--4', styles.feature)}>
       {imgUrl && (
         <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
+          <img className={styles.featureImage} style={imgStyle} src={imgUrl} alt={title} />
         </div>
       )}
       <h3>{title}</h3>
@@ -62,13 +111,13 @@ function Home() {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
-        <div className="container">
+        <div className={clsx('container', styles.heroBannerContainer)}>
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link
               className={clsx(
-                'button button--outline button--secondary button--lg',
+                'button button--outline button--primary button--lg',
                 styles.getStarted,
               )}
               to={useBaseUrl('docs/')}>
@@ -90,6 +139,14 @@ function Home() {
           </section>
         )}
       </main>
+      <footer>
+            <div className="container">
+                <a href="https://ec.europa.eu/">
+                    <img src={useBaseUrl('img/europa_flag_low.jpg')} />
+                </a>
+                <p>Supported by the H2020 Programme under <a href="https://cordis.europa.eu/project/id/870620">Grant Agreement No. 870620</a></p>
+          </div>
+      </footer>
     </Layout>
   );
 }

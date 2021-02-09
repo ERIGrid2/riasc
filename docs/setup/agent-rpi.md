@@ -1,4 +1,9 @@
-# Raspberry Pi based Mobile Unit
+---
+id: agent-rpi
+title: Raspberry Pi based Agent
+sidebar_label: Raspberry Pi
+slug: /setup/agent/rpi
+---
 
 ## Installation
 
