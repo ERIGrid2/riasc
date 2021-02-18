@@ -5,21 +5,38 @@ sidebar_label: Introduction
 slug: /
 ---
 
-RIasC, an acronym for **R**esearch **I**nfrastructure **as** **C**ode, is a cloud-based platform to accelerate distributed Research Infrastructure (RI) experiments.
+RIasC, an acronym for **R**esearch **I**nfrastructure **as** **C**ode, is a framework to accelerate distributed Research Infrastructure (RI) experiments.
 
-It achieves this by a high degree of automation of common tasks in a research environment such as:
+Inspired by the Infrastructure-as-Code paradigm it achieves this by a high degree of automation of common tasks in a research environment such as:
 
-- Rapid deployment of controllers and other services in a research cloud
+- Rapid deployment of controllers and other services in a research/laboratory cloud
 - Network setup and VPN configuration
 - Logging of research data
-- Formalization of scenario descriptions
+- Formalization and declarative description of research setups
+
+Infrastructure as code (IaC) is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
+The IT infrastructure managed by this process comprises both physical equipment, such as bare-metal servers, as well as virtual machines, and associated configuration resources.
+The definitions may be in a version control system.
+It can use either scripts or declarative definitions, rather than manual processes, but the term is more often used to promote declarative approaches.
+
+RIasC realizes this by utilizing existing cloud-computing technologies and applying them in a research environment.
 
 ## Functions
 
-- Transparent inter-lab overlay network
-- Network emulation between all components
-- Interfaces to lab equipment outside of the cloud
-- Network policies to implement access control to resources with the cloud and the lab
+RIasC provides the following functionalities to accelerate distributed Research Infrastructure (RI) experiments.
+
+###  Transparent inter-laboratory overlay network
+
+Research of highly complex systems such as for example todays energy systems is increasingly undertaken by a group of researchers and institutions.
+Consequently, it is desirably to perform distributed experiments spanning multiple laboratories.
+RIasC simplifies the setup of such distributed setups by providing a transparent IP overlay network between all trial sites.
+
+### Network emulation
+
+### Interfaces to laboratory equipment outside of the cloud
+
+
+### Network policies to implement access control to resources with the cloud and the laboratory
 
 ## Architecture
 
@@ -41,7 +58,13 @@ K3S has no other external dependencies besides the Linux kernel.
 This is a main factor to simplify the whole deployment of new nodes.
 
 Please refer to the [agent setup](./setup/agent.md) for more information.
+
 ### Components
+
+RIasC relies on a collection of existing software tools and projects.
+It combines these tools by providing reference examples and configurations benefiting researchs by a simpler and approachable access to cloud technologies. 
+
+Currently to following existing tools are deployed by RIasC:
 
 - [Kubernetes](http://kubernetes.io/)
   - [K3S](http://k3s.io/)
