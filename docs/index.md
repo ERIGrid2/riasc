@@ -50,3 +50,13 @@ Please refer to the [agent setup](./setup/agent.md) for more information.
 - [Linux traffic control / netem](https://wiki.linuxfoundation.org/networking/netem)
 - [VILLASframework](https://fein-aachen.org/projects/villas-framework/)
 - [Power System Automation Language(PSAL)](https://www.mdpi.com/1996-1073/10/3/374/htm)
+
+
+## Credits
+
+RIasC is developed as part of the [European H2020 project ERIGrid 2.0](https://erigrid2.eu) in the work package JRA2.2 "Real-time coupling and HIL approaches".
+Contributing partners are:
+
+- Insitute for Automation of Complex Power Systems (ACS) at RWTH Aachen University
+- Austrian Institute for Technology (AIT)
+- VTT Technical Research Centre of Finland Ltd.
