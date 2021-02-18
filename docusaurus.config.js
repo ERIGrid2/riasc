@@ -1,13 +1,15 @@
+const remarkMermaid = require('remark-mermaid');
+
 module.exports = {
   title: 'RIasC',
   tagline: 'Research Infrastructure as Code',
-  url: 'https://riasc.fein-aachen.org',
+  url: 'https://erigrid2.github.io/riasc',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logos/riasc.svg',
-  organizationName: 'RIasCode', // Usually your GitHub org/user name.
-  projectName: 'website', // Usually your repo name.
+  organizationName: 'ERIGrid2',
+  projectName: 'riasc',
   themeConfig: {
     hideableSidebar: true,
     navbar: {
@@ -26,7 +28,7 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/riascode/',
+          href: 'https://github.com/ERIGrid2/',
           label: 'GitHub',
           position: 'right',
         },
@@ -70,7 +72,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/ERIGrid2/',
             },
           ],
         },
@@ -89,13 +91,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/riascode/website/edit/master/',
+            'https://github.com/ERIGrid2/riasc/edit/master/'
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/riascode/website/edit/master/blog/',
+            'https://github.com/ERIGrid2/riasc/edit/master/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
