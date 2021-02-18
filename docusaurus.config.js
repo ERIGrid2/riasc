@@ -4,7 +4,7 @@ module.exports = {
   title: 'RIasC',
   tagline: 'Research Infrastructure as Code',
   url: 'https://erigrid2.github.io/riasc',
-  baseUrl: '/',
+  baseUrl: '/riasc/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logos/riasc.svg',
