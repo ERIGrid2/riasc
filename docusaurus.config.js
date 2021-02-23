@@ -58,7 +58,7 @@ module.exports = {
               href: 'https://acs.eonerc.rwth-aachen.de',
             },
             {
-              label: 'ERIGrid Project',
+              label: 'ERIGrid 2.0 Project',
               href: 'https://erigrid2.eu',
             },
           ],
