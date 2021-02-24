@@ -7,6 +7,16 @@ module.exports = {
 	},
 	{
 		type: 'category',
+		label: 'Design',
+		items: [
+			'design/ip-overlay',
+			'design/ip-gateway',
+			'design/network-emulation',
+			'design/code-generation'
+		]
+	},
+	{
+		type: 'category',
 		label: 'Setup',
 		items: [
 			'setup/index',
