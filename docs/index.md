@@ -38,6 +38,14 @@ RIasC simplifies the setup of such distributed setups by providing a transparent
 
 ### Network policies to implement access control to resources with the cloud and the laboratory
 
+## Worklow
+
+import Mermaid from '@theme/Mermaid';
+<Mermaid chart={`
+graph TD
+    Start --> Stop
+`} />
+
 ## Architecture
 
 The following figure illustrates an exemplary setup of RIasC.
