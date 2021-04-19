@@ -12,6 +12,7 @@ module.exports = {
 			'design/ip-overlay',
 			'design/ip-gateway',
 			'design/network-emulation',
+			'design/network-monitoring',
 			'design/code-generation'
 		]
 	},
@@ -26,8 +27,10 @@ module.exports = {
 				type: 'category',
 				label: 'Agent',
 				items: [
+					'setup/agent',
 					'setup/agent-rpi',
-					'setup/agent-fcos'
+					'setup/agent-fcos',
+					'setup/config'
 				]
 			}
 		]
@@ -36,7 +39,8 @@ module.exports = {
 		type: 'category',
 		label: 'Usage',
 		items: [
-			'usage/index'
+			'usage/index',
+			'usage/rancher'
 		]
 	},
 	{
@@ -45,6 +49,7 @@ module.exports = {
 		items: [
 			'examples/index'
 		]
-	}
+	},
+	'terminology'
   ]
 };

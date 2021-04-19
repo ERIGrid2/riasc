@@ -3,6 +3,8 @@ id: network-emulation
 title: Network emulation (netem) CNI-plugin for Kubernetes
 sidebar_label: Network Emulation
 slug: /design/network-emulation
+partners:
+- vtt
 ---
 
 # Facts
