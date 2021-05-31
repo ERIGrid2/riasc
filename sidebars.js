@@ -21,15 +21,15 @@ module.exports = {
 		label: 'Setup',
 		items: [
 			'setup/index',
-			'setup/ansible',
 			'setup/server',
 			{
 				type: 'category',
 				label: 'Agent',
 				items: [
 					'setup/agent',
+					'setup/agent-manual',
 					'setup/agent-rpi',
-					'setup/agent-fcos',
+					'setup/agent-cloud-init',
 					'setup/config'
 				]
 			}
@@ -40,7 +40,8 @@ module.exports = {
 		label: 'Usage',
 		items: [
 			'usage/index',
-			'usage/rancher'
+			'usage/rancher',
+			'usage/time-sync'
 		]
 	},
 	{

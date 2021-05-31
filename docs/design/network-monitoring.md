@@ -28,8 +28,8 @@ The gathered measurements are then used to construct graph in wich the vertices 
 
 - ICMP Echo/Reply pings
 - VILLASnode [test-rtt node-type](https://villas.fein-aachen.org/doc/node-type-test-rtt.html) for timetagged UDP payloads
-- [iperf3](http://software.es.net/iperf/)
-- [Prometheus](https://prometheus.io/)
+- iperf3[^4]
+- Prometheus[^5]
 
 # Architecture
 
@@ -42,10 +42,14 @@ A dedicated Grafana instance is deployed in the cluster itself and can then be u
 A dedicated Go program `k8s-netmon-graph` is used to retrieve the measurements from Promtheus and converst them into several different graph represenations for further processing:
 - Graphviz Dot file
 - Rendered SVG graph
-- [GraphML](http://graphml.graphdrawing.org/about.html)
+- GraphML[^3]
 For this purpose `k8s-netmon-graph` implements a simple HTTP API.
+The rendered version of the graph is also embedded as an SVG graphic into the Grafana dashboard.
 
-The rendered version of the graph is also embedded as an SVG graphic into the Grafana Dashboard.
+Each node relies on an accurate and synchronized system clock for reliable one-way day (OWD) measurements.
+The synchronization of the Linux system clock can be carried out by the usual time synchronization methods (e.g. NTP, PTP IEEE1588).
+In the case of Raspberry Pi-based nodes, cheap GPS receivers can be used to provide a pulse-per-second (PPS) signals to increase the accuracy [^1], [^2].
+
 
 # Implementation details
 
@@ -53,5 +57,12 @@ The rendered version of the graph is also embedded as an SVG graphic into the Gr
 
 - https://github.com/simonswine/kube-latency
 - https://medium.com/flant-com/ping-monitoring-between-kubernetes-nodes-11e815f4eff1
+
+- https://github.com/redlab-i/pps-tools
 - [Kubernetes DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
-- [GraphML](http://graphml.graphdrawing.org/about.html)
+
+[^1]: https://github.com/rascol/PPS-Client
+[^2]: http://linuxpps.org/
+[^3]: http://graphml.graphdrawing.org/about.html
+[^4]: http://software.es.net/iperf/
+[^5]: https://prometheus.io/

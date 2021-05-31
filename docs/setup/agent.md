@@ -5,9 +5,10 @@ sidebar_label: Overview
 slug: /setup/agent
 ---
 
+The setup of a new agent is relatively straight forward.
 
+We support the following methods:
 
-# Guides
-
+- [Manually via Script](./agent-manual.md) 
 - [Raspberry Pi](./agent-rpi.md)
-- [Fedora CoreOS](./agent-fcos.md)
+- [Cloud-init](./agent-cloud-init.md)
