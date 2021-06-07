@@ -51,6 +51,13 @@ module.exports = {
 			'examples/index'
 		]
 	},
+	{
+		type: 'category',
+		label: 'Development',
+		items: [
+			'development/rpi-image'
+		]
+	},
 	'terminology'
   ]
 };
