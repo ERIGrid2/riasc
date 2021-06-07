@@ -18,6 +18,8 @@ For [cloud-init installations](./agent-cloud-init.md) the contents of configurat
 
 ## Example
 
+The latest example configuration can be found [in the provisioning repo](https://github.com/ERIGrid2/riasc-provisioning/blob/master/riasc.yaml).
+
 ```yaml
 # A unique hostname to identify the node
 hostname: rpi-test1 # changeme!
