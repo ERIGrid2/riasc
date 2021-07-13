@@ -26,43 +26,41 @@ The gathered measurements are then used to construct graph in wich the vertices 
 
 # Employed technologies
 
-- ICMP Echo/Reply pings
-- VILLASnode [test-rtt node-type](https://villas.fein-aachen.org/doc/node-type-test-rtt.html) for timetagged UDP payloads
-- iperf3[^4]
-- Prometheus[^5]
+- [Flent](https://flent.org/)
+- Kubernetes:
+  - [Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)
 
 # Architecture
 
-`k8s-netmon` is implemented as a Go program and deployed as a Kubernetes DaemonSet on each node.
-The tool periodically performs poin-to-point network measurements using the `villas-node`, `iperf3` and `ping` tools.
-The collected measurements are exported via a Promtheus metrics endpoint from which Prometheus will periodically collect them and store them in the Promtheus database.
+`k8s-netmon` runs a Kubernetes controller which watches _TestSchedule_ custom resources (CR)s.
+Based on _TestSchedules_ CRs the controller will spawn _Pods_ to execute individual test runs.
 
+The actual network tests are performed by Flent, the Flexible network tester.
+Flent stores its results in archives which will be uploaded to a S3 object storage which they can be downloaded for subsequent analysis.
+
+In addition, the most recent measurments (e.g. ICMP ping RTT) can be pushed to a Promtheus instance for monitoring.
 A dedicated Grafana instance is deployed in the cluster itself and can then be used to visualize the collected metrics.
 
-A dedicated Go program `k8s-netmon-graph` is used to retrieve the measurements from Promtheus and converst them into several different graph represenations for further processing:
+A dedicated Python program `k8s-netmon-graph` is used to retrieve the measurements from Promtheus and converts them into several different graph represenations for further processing:
 - Graphviz Dot file
 - Rendered SVG graph
 - GraphML[^3]
 For this purpose `k8s-netmon-graph` implements a simple HTTP API.
 The rendered version of the graph is also embedded as an SVG graphic into the Grafana dashboard.
 
-Each node relies on an accurate and synchronized system clock for reliable one-way day (OWD) measurements.
-The synchronization of the Linux system clock can be carried out by the usual time synchronization methods (e.g. NTP, PTP IEEE1588).
-In the case of Raspberry Pi-based nodes, cheap GPS receivers can be used to provide a pulse-per-second (PPS) signals to increase the accuracy [^1], [^2].
-
+For precise one-way delay measurements the accuracy of the system clocks is essential.
+To increase the accuracy of the clocks, a dedicated component 
 
 # Implementation details
 
 # Further reading
 
+- [Flent](https://flent.org/)
 - https://github.com/simonswine/kube-latency
 - https://medium.com/flant-com/ping-monitoring-between-kubernetes-nodes-11e815f4eff1
 
 - https://github.com/redlab-i/pps-tools
 - [Kubernetes DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
 
-[^1]: https://github.com/rascol/PPS-Client
-[^2]: http://linuxpps.org/
 [^3]: http://graphml.graphdrawing.org/about.html
-[^4]: http://software.es.net/iperf/
-[^5]: https://prometheus.io/
+
