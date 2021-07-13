@@ -29,8 +29,8 @@ For this purpose a dedicated component, the [IP gateway](ip-gateway.md) is used.
 
 # Employed technologies
 
-- Wireguard
-- Kilo
+- [Wireguard](https://www.wireguard.com/)
+- [Kilo](https://github.com/squat/kilo)
 
 # Architecture
 
@@ -41,9 +41,25 @@ The `kg` daemon completely automates the configuration of each VPN service by fa
 
 # Implementation details
 
+## NAT-2-NAT hole punching
+
+Kilo supports UDP hole-punching in scenarios where two endpoints are located behind a NAT-firewall.
+
+See: https://github.com/squat/kilo/pull/146
+
+## STUN/TURN gateways for UDP-blocked corporate environments
+
+Currently Kilo will fail to establish VPN connection if the endpoint is located behind a symmetric NAT/firewall.
+To workaround this issue, (Interactive Connectivity Establishment (RFC8445)](https://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment) can be used.
+
+[Wiretrustee](https://wiretrustee.com/) is a project implementing this feature.
+Work is ongoing to integrate this code into Kilo.
+
+See: https://github.com/squat/kilo/issues/189
+
 # Further Reading
 
-- [Kilo](https://github.com/squat/kilo)
-  - [Wireguard](https://wireguard.com/)
 - [Jordan Whited: WireGuard Endpoint Discovery and NAT Traversal using DNS-SD](https://www.jordanwhited.com/posts/wireguard-endpoint-discovery-nat-traversal/)
 - [David Anderson: How NAT traversal works, Tailscale](https://tailscale.com/blog/how-nat-traversal-works/)
+- [Tailscale](https://tailscale.com/)
+- [Wiretrustee](https://wiretrustee.com/)
