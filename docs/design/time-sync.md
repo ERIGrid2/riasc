@@ -28,7 +28,7 @@ The time-synchronization relies on a comodity GPS module providing a pulse-per-s
 
 - Time-delay compensation
 - Logging/timestamping/tracing of interface signals
-- [Network monitoring](/design/k8s-netmon)
+- [Network monitoring](network-monitoring.md)
 
 # Functional Requirements
 
