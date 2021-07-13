@@ -11,6 +11,7 @@ module.exports = {
 		items: [
 			'design/ip-overlay',
 			'design/ip-gateway',
+			'design/time-sync',
 			'design/network-emulation',
 			'design/network-monitoring',
 			'design/code-generation'

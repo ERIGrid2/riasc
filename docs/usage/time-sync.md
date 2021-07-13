@@ -5,25 +5,6 @@ sidebar_label: Time Synchronization
 slug: /usage/time-sync
 ---
 
-This guide describes the steps to setup time-synchronization for embbeded single-board computers (SBCs) such as a Raspberry Pi.
-The time-synchronization relies on a comodity GPS module providing a pulse-per-second (PPS) output to a GPIO pin of the SBC.
-
-## Applications
-
-- Time-delay compensation
-- Logging/timestamping/tracing of interface signals
-- Network monitoring
-
-## Synchronization sources
-
-1. PPS (kernel PPS features, fallback to SW)
-2. GPSd
-3. PTP
-4. NTP
-## Functional Requirements
-
-- Microsecond accuracy
-
 ## Requriements
 
 - 1x GPS receiver module with PPS output
@@ -61,19 +42,3 @@ It is automatically enabled for all nodes.
 
 The configuration of the PPS inputs on a Raspberry Pi is done by the [RIasC Ansible playbook](https://github.com/ERIGrid2/riasc-ansible/tree/master/roles/rpi-gps-sync).
 It will be applied to all Raspberry Pi based nodes.
-
-## Testing
-
-1. Local testing
-   - Two Raspberry Pis
-   - Independent synchronization sources
-   - Equal or different synchronization types
-   - Produce periodic rising edge via GPIO
-   - Use oscilloscope to measure time offset between edges
-
-2. Reporting synchronization status between RIs
-   - Retrieve sync status from Chrony
-
-## Links
-
-- https://github.com/beta-tester/RPi-GPS-PPS-StratumOne
