@@ -3,8 +3,8 @@ const remarkMermaid = require('remark-mermaid');
 module.exports = {
   title: 'RIasC',
   tagline: 'Research Infrastructure as Code',
-  url: 'https://erigrid2.github.io/riasc',
-  baseUrl: '/riasc/',
+  url: 'https://riasc.eu',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logos/riasc.svg',
@@ -30,6 +30,11 @@ module.exports = {
         {
           href: 'https://github.com/ERIGrid2/',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://erigrid2.eu/',
+          label: 'ERIGrid 2.0',
           position: 'right',
         },
       ],
