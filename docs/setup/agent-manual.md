@@ -17,7 +17,10 @@ slug: /setup/agent/manual
 
 1. Create he [riasc.yaml](config.md) file and place it in your current working directory
 2. Run the following snippet to start the installation
-
-```bash
-wget https://raw.githubusercontent.com/ERIGrid2/riasc-provisioning/master/common/riasc-update.sh | bash
-```
+    ```bash
+    sudo -s
+    curl -q https://raw.githubusercontent.com/ERIGrid2/riasc-provisioning/master/common/riasc-update.sh | bash
+    ```
+3. Wait until provisioning completes.
+   - The first boot will take a while (> 10 minutes)
+   - Once finished the the console should print `RIasC update completed successfully!`
