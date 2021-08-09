@@ -22,7 +22,8 @@ The time-synchronization relies on a comodity GPS module providing a pulse-per-s
 
 - [Chrony](https://chrony.tuxfamily.org/)
 - [GPSd](https://www.berlios.de/software/gpsd/)
-- Kubernetes Node-status
+- Kubernetes:
+  - [Node status-condition](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/#nodecondition-v1-core)
 
 # Applications
 
@@ -72,7 +73,8 @@ Both gpsd and chronyd use the kernel-based PPS device order for the PPS `/dev/pp
 
 As mentioned above a dedicated `chronyd-monitor` container in the time-sync _Pods_ is used to periodically publish the current synchronization state from chronyd in the form of a _Node status-condition_ to the Kubernetes api-server.
 
-This container runs a [Python script](https://github.com/ERIGrid2/charts/blob/master/images/time-sync/chrony-monitor.py) which periodically calls
+This container runs a [Python script](https://github.com/ERIGrid2/charts/blob/master/images/time-sync/chrony-monitor.py) which periodically calls the `chronyc tracking` and `chronyc sources` commnands to query the current synchronization status.
+Afterwards, the script will publish this status as _Node status-condition_ to the Kubernetes api-server as well include more details a annotations to the _Node_ resource.
 
 ## Synchronization sources
 
