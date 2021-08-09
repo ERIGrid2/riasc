@@ -82,7 +82,7 @@ _k8s-netem_ is deployed by the Riasc Helm chart.
 
 ## Custom Resources
 
-_k8s-netem_ defines a new CRD k8s-netem.riasc.io/v1/trafficprofiles.
+_k8s-netem_ defines a new CRD k8s-netem.riasc.eu/v1/trafficprofiles.
 
 ## Mutating Admission Webhook
 
