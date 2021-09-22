@@ -13,6 +13,7 @@ The setup of an Raspberry Pi single-board computer is the easiest way to partici
 - SD card (>= 16 GB)
 - SD card reader
 - SD card imager tool (e.g. [Balena Etcher](https://www.balena.io/etcher/))
+- [SD card image of RIasC](https://rwth-aachen.sciebo.de/s/7RpsGEl7NEEsvf1/download?path=%2F&files=2021-09-22-riasc-raspios.zip) (~ 500 MB)
 - Hostname and token from cluster administrator
 
 ## Installation
@@ -23,7 +24,7 @@ The setup of an Raspberry Pi single-board computer is the easiest way to partici
      - `TOKEN=K109b5813dd9a6944badc430e0e457179e4c83333f882a13ea7356134be77d3508b::server:e851c7e39f5fe771b8b9377c79eaff68`
      - `HOSTNAME=riasc-node-vtt`
 2. Use your SD card imager tool of choice  to write the image to a spare SD card.
-   - If asked use the following link as a URL for downloading the image: `https://rwth-aachen.sciebo.de/s/7RpsGEl7NEEsvf1/download?path=%2F&files=2021-08-09-riasc-raspios.zip`
+   - If asked use the following link as a URL for downloading the image: `https://rwth-aachen.sciebo.de/s/7RpsGEl7NEEsvf1/download?path=%2F&files=2021-09-22-riasc-raspios.zip`
 3. Re-insert the SD card reader and open the `boot` partition of the SD card.
 4. Adjust the [riasc.yaml](config.md) file inside this partition:
    - Adjust the the settings `hostname` and `ansible.variables.token` with the values from step 1.
