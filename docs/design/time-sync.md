@@ -10,7 +10,7 @@ partners:
 
 # Facts
 
-- **Git Repo:** https://github.com/ERIGrid2/charts/tree/master/charts/riasc/templates/time-sync
+- **Helm Chart:** https://github.com/ERIGrid2/charts/tree/master/charts/time-sync
 - **State:** under development
 
 # Introduction

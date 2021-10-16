@@ -10,6 +10,7 @@ partners:
 # Facts
 
 - **Git Repo:** 
+- **Helm Chart:** https://github.com/ERIGrid2/charts/tree/master/charts/multus
 - **State:** in design phase
 
 # Introduction

@@ -10,7 +10,8 @@ partners:
 
 # Facts
 
-- **Git Repo:** https://github.com/ERIGrid2/k8s-netmon
+- **Source Code:** https://github.com/ERIGrid2/k8s-netmon
+- **Helm Chart:** https://github.com/ERIGrid2/charts/tree/master/charts/flent
 - **State:** to be implemented
 
 # Introduction

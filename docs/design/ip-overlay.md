@@ -9,8 +9,8 @@ partners:
 
 # Facts
 
-- **Git Repo:** https://github.com/ERIGrid2/charts/tree/master/charts/riasc
-- **State:** to be implemented
+- **Git Repo:** https://github.com/ERIGrid2/charts/tree/master/charts/kilo
+- **State:** under implementation
 
 # Introduction
 
@@ -31,6 +31,7 @@ For this purpose a dedicated component, the [IP gateway](ip-gateway.md) is used.
 
 - [Wireguard](https://www.wireguard.com/)
 - [Kilo](https://github.com/squat/kilo)
+- [WICE](https://github.com/ERIGrid2/wice)
 
 # Architecture
 
@@ -39,6 +40,8 @@ Kilo is a multi-cloud network overlay built on WireGuard and designed for Kubern
 It deploys the `kg` daemon as Kubernetes DaemonSet on each node in the RIasC cloud.
 The `kg` daemon completely automates the configuration of each VPN service by facilitating the exchange of keys and endpoints.
 
+In addition another tool named _WICE_ is used for facilitating peer-to-peer connections via _Kilo_.
+
 # Implementation details
 
 ## NAT-2-NAT hole punching
@@ -46,6 +49,8 @@ The `kg` daemon completely automates the configuration of each VPN service by fa
 Kilo supports UDP hole-punching in scenarios where two endpoints are located behind a NAT-firewall.
 
 See: https://github.com/squat/kilo/pull/146
+
+In addition _WICE_, facilitates NAT-2-NAT connections by using _Interactive Connectivty Establishment_ (RFC8445)[https://datatracker.ietf.org/doc/html/rfc8445].
 
 ## STUN/TURN gateways for UDP-blocked corporate environments
 

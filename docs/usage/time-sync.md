@@ -33,10 +33,9 @@ Connect the GPS receiver according to the following table:
 
 ## Configuration
 
-The time synchronzation is configured via the [RIasC Helm chart](https://github.com/ERIGrid2/charts/tree/master/charts/riasc/templates/time-sync
-).
-It is automatically enabled for all nodes.
+The time synchronzation is configured via the [RIasC Helm chart](https://github.com/ERIGrid2/charts/tree/master/charts/time-sync).
 
+It is automatically enabled for all nodes.
 
 ### Configuring Linux PPS device on Raspberry Pi
 
