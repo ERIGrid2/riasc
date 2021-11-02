@@ -4,8 +4,8 @@ title: Monitoring of network conditions
 sidebar_label: Network Monitoring
 slug: /design/network-monitoring
 partners:
-- vtt
 - rwth
+- uos
 ---
 
 # Facts
@@ -34,18 +34,26 @@ The gathered measurements are then used to construct graph in wich the vertices 
 # Architecture
 
 `k8s-netmon` runs a Kubernetes controller which watches _TestSchedule_ custom resources (CR)s.
-Based on _TestSchedules_ CRs the controller will spawn _Pods_ to execute individual test runs.
+Based on _TestSchedules_ CRs the controller will spawn _DaemonSets_ to execute individual test runs between a pair of nodes.
+The `k8s-netmon` controller will take care that _TestSchedules_ are not executed simultaneously to avoid interference between the tests.
 
-The actual network tests are performed by Flent, the Flexible network tester.
+The actual network tests are performed by [Flent](https://flent.org/), the Flexible network tester.
+The `k8s-netmon` controller spawns pairs of Flent pods on different nodes within the cluster.
+These pods will execute the Flent container image. One of them will act as a server while the other acts as the client.
+The lifetime of these pods is short. They exist only for the duration of the test.
 Flent stores its results in archives which will be uploaded to a S3 object storage which they can be downloaded for subsequent analysis.
 
-In addition, the most recent measurments (e.g. ICMP ping RTT) can be pushed to a Promtheus instance for monitoring.
+The user should be supported in analysis of the collected data by a Python package which downloads the collected test results from the S3 object storage.
+This Python package can also directly unpack and load the test results using appropriate packages like Pandas and perform visuzations with matplotlib.
+
+In addition, most recent measurments (e.g. ICMP ping RTT) can be stored in a Promtheus time-series database for monitoring.
 A dedicated Grafana instance is deployed in the cluster itself and can then be used to visualize the collected metrics.
 
 A dedicated Python program `k8s-netmon-graph` is used to retrieve the measurements from Promtheus and converts them into several different graph represenations for further processing:
 - Graphviz Dot file
 - Rendered SVG graph
 - GraphML[^3]
+
 For this purpose `k8s-netmon-graph` implements a simple HTTP API.
 The rendered version of the graph is also embedded as an SVG graphic into the Grafana dashboard.
 
@@ -64,4 +72,3 @@ To increase the accuracy of the clocks, a dedicated component
 - [Kubernetes DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
 
 [^3]: http://graphml.graphdrawing.org/about.html
-
