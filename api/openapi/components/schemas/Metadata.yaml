@@ -1,0 +1,19 @@
+---
+type: object
+properties:
+  metadata:
+    title: Object Metadata
+    type: object
+    properties:
+      name:
+        type: string
+        example: rwth
+      namespace:
+        type: string
+        example: erigrid-ta-123
+      labels:
+        type: object
+        example:
+          institution: rwth
+      annotations:
+        type: object

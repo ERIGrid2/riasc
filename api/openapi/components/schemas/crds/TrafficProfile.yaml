@@ -1,0 +1,12 @@
+allOf:
+- $ref: ../Metadata.yaml
+- type: object
+  properties:
+    apiVersion:
+      type: string
+      default: riasc.eu/v1
+    kind:
+      type: string
+      default: TrafficProfile
+    spec:
+      type: object
