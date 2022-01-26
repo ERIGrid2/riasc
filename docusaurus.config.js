@@ -90,6 +90,16 @@ module.exports = {
   },
   presets: [
     [
+      'redocusaurus',
+      {
+        specs: [
+          {
+            spec: 'api/dist.yaml',
+          },
+        ],
+      },
+    ],
+    [
       '@docusaurus/preset-classic',
       {
         docs: {

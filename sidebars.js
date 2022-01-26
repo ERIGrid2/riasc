@@ -42,7 +42,17 @@ module.exports = {
 		items: [
 			'usage/index',
 			'usage/rancher',
-			'usage/time-sync'
+			'usage/time-sync',
+		]
+	},
+	{
+		type: 'category',
+		label: 'Reference',
+		items: [
+			'reference/project',
+			'reference/timesyncconfig',
+			'reference/trafficprofile',
+			'reference/schedulerconfig'
 		]
 	},
 	{

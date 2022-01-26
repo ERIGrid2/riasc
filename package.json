@@ -12,14 +12,14 @@
     "clear": "docusaurus clear"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.70",
-    "@docusaurus/preset-classic": "2.0.0-alpha.70",
+    "@docusaurus/core": "2.0.0-beta.14",
+    "@docusaurus/preset-classic": "2.0.0-beta.14",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
-    "docusaurus": "^1.14.6",
     "mermaid": "^8.9.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "redocusaurus": "^0.5.1",
     "remark-mermaid": "^0.2.0"
   },
   "browserslist": {
