@@ -94,7 +94,12 @@ module.exports = {
       {
         specs: [
           {
-            spec: 'api/dist.yaml',
+            routePath: '/api/crd/',
+            spec: 'api/crds.yaml',
+          },
+          {
+            routePath: '/api/time-sync/',
+            spec: 'api/time-sync.yaml',
           },
         ],
       },

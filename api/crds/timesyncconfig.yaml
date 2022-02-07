@@ -1,0 +1,199 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: timesyncconfigs.riasc.eu
+spec:
+  scope: Cluster
+  group: riasc.eu
+  names:
+    kind: TimeSyncConfig
+    plural: timesyncconfigs
+    singular: timesyncconfig
+    shortNames:
+    - tsc
+  versions:
+  - name: v1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+
+          spec:
+            type: object
+            default:
+              ntp: {}
+              ptp: {}
+              pps: {}
+
+            properties:
+
+              nodeSelector:
+                type: object
+                default: {}
+                x-kubernetes-preserve-unknown-fields: true
+
+              ntp:
+                type: object
+                default: {}
+                properties:
+                  client:
+                    type: object
+                    properties:
+                      enabled:
+                        type: boolean
+                        default: true
+
+                  servers:
+                    type: array
+                    default: []
+                    items:
+                      type: object
+                      x-kubernetes-preserve-unknown-fields: true
+                      required:
+                      - address
+                      properties:
+                        type:
+                          type: string
+                          default: server
+                          pattern: '^server|pool|peer$'
+                        address:
+                          type: string
+                          example: ntp1.rwth-aachen.de
+
+                  server:
+                    default: {}
+                    type: object
+                    properties:
+                      enabled:
+                        type: boolean
+                        default: false
+
+                      local:
+                        type: boolean
+                        default: false
+
+                      stratum:
+                        type: integer
+                        default: 1
+
+                      orphan:
+                        type: boolean
+                        default: true
+
+                      allow:
+                        description: Access control list
+                        type: array
+                        default:
+                        - 0.0.0.0/0
+                        - ::/0
+                        items:
+                          type: string
+
+                      deny:
+                        description: Access control list
+                        type: array
+                        default: []
+                        items:
+                          type: string
+
+              gps:
+                type: object
+                default: {}
+                properties:
+                  enabled:
+                    type: boolean
+                    default: false
+
+                  device:
+                    type: string
+                    default: ttyAMA0
+                    description: The serial device of the GPS receiver (e.g. /dev/ttyAMA0)
+
+                  extraArgs:
+                    description: |
+                      Additional commandline options passed to GPSd
+                      See: https://manpages.debian.org/bullseye/gpsd/gpsd.8.en.html
+                    type: array
+                    items:
+                      type: string
+
+              pps:
+                type: object
+                default: {}
+                properties:
+                  enabled:
+                    type: boolean
+                    default: false
+
+
+                  device:
+                    description: Kernel PPS device (e.g. /dev/pps0)
+                    type: string
+                    default: pps0
+
+                  pin:
+                    type: integer
+                    description: GPIO pin which is providing PPS input
+                    default: 18
+
+              ptp:
+                type: object
+                default: {}
+                properties:
+                  enabled:
+                    type: boolean
+                    default: false
+
+                  slaveOnly:
+                    type: boolean
+                    default: true
+                    description: The local clock is a slave-only clock if enabled.
+
+                  loggingLevel:
+                    type: integer
+                    description: The maximum logging level of messages which should be printed.
+                    default: 6 # LOG_INFO
+
+                  verbose:
+                    type: boolean
+                    description: Print messages to the standard output if enabled.
+                    default: false
+
+                  interface:
+                    description: Network interface which is used for PTP sync.
+                    type: string
+                    default: eth0
+
+                  device:
+                    description: The PTP Hardware clock device (PHC)
+                    type: string
+                    default: ptp0
+
+                  transport:
+                    type: string
+                    description: |
+                      Select the network transport.
+                      Possible values are UDPv4, UDPv6 and L2.
+                    default: UDPv4
+                    pattern: '^UDPv4|UDPv6|L2$'
+
+                  timestamping:
+                    description: The time stamping method
+                    type: string
+                    default: hardware
+                    pattern: '^hardware|software|legacy$'
+
+              chrony:
+                type: object
+                default: {}
+                properties:
+                  extraConfig:
+                    type: string
+                    default: ''
+                    description: |
+                      Extra content for Chrony configuration file
+
+                      See: https://manpages.debian.org/bullseye/chrony/chrony.conf.5.en.html

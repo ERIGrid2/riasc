@@ -1,0 +1,135 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: chromq4qs.device.riasc.eu
+spec:
+  scope: Cluster
+  group: device.riasc.eu
+  names:
+    kind: Chroma4Q
+    plural: chroma4qs
+    singular: chroma4q
+
+  versions:
+  - name: v1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              state:
+                type: string
+                default: disconnected
+                pattern: '^(dis)?connected$'
+
+              phases:
+                type: array
+                items:
+                  type: integer
+                description: List of configured phases
+
+              connection:
+                type: object
+                properties:
+                  host:
+                    type: string
+                    description: Hostname or IP of device
+
+                  port:
+                    type: integer
+                    description: Port number for SCPI communication
+
+                  timeout:
+                    type: integer
+                    description: Communication timeout before giving up [s]
+                    minimum: 0
+                    default: 5
+
+              parameters:
+                type: object
+                properties:
+                  maxCurrent:
+                    type: number
+                    description: Output current limit in [Arms]
+
+                  overcurrentDelay:
+                    type: number
+                    description: Delay for triggering overcurrent protection in [s]
+
+                  maxPower:
+                    type: number
+                    description: Output power limit in [VA]
+
+                  maxFrequency:
+                    type: number
+                    description: Maximum AC output voltage frequency reference in [Hz]
+
+                  maxVolageAC:
+                    type: number
+                    description: Maximum AC output voltage reference in [Vrms]
+
+                  maxVoltageDCplus:
+                    type: number
+                    description: Maximum DC output voltage reference in [Vdc]
+                    default: 0
+
+                  maxVoltageDCminus:
+                    type: number
+                    description: Minimum DC output voltage reference in [Vdc]
+                    default: 0
+
+              setpoints:
+                type: object
+                properties:
+                  voltageDC:
+                    type: array
+                    items:
+                      type: number
+                  voltageAC:
+                    type: array
+                    items:
+                      type: number
+                  frequency:
+                    type: array
+                    items:
+                      type: number
+
+          status:
+            type: object
+
+            properties:
+              state:
+                type: string
+
+            measurements:
+              type: object
+              properties:
+                frequency:
+                  type: array
+                  items:
+                    type: number
+                voltageDC:
+                  type: array
+                  items:
+                    type: number
+                voltageAC:
+                  type: array
+                  items:
+                    type: number
+                currentAC:
+                  type: array
+                  items:
+                    type: number
+                powerReal:
+                  type: array
+                  items:
+                    type: number
+                powerReactive:
+                  type: array
+                  items:
+                    type: number
