@@ -13,5 +13,11 @@
         <link href="https://riasc.eu/blog/hello-world"/>
         <updated>2021-02-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Welcome to this blog. This is the new website of the RIasC project development in task JRA2.2 of the European H2020 project ERIGrid 2.0.]]></summary>
+        <content type="html"><![CDATA[<p>Welcome to this blog. This is the new website of the RIasC project development in task JRA2.2 of the <a href="https://erigrid2.eu" target="_blank" rel="noopener noreferrer">European H2020 project ERIGrid 2.0</a>.</p><p>The documentation is currently under construction. Come back later for more details!</p>]]></content>
+        <author>
+            <name>Steffen Vogel</name>
+            <uri>https://www.steffenvogel.de</uri>
+        </author>
+        <category label="hello" term="hello"/>
     </entry>
 </feed>
