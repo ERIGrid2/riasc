@@ -2,6 +2,7 @@
 id: agent-cloud-init
 title: Cloud-init
 sidebar_label: Cloud-init
+sidebar_positon: 3
 slug: /setup/agent/cloud-init
 ---
 

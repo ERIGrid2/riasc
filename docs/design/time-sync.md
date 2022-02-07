@@ -2,6 +2,7 @@
 id: time-sync
 title: Time Synchronization
 sidebar_label: Time Synchronization
+sidebar_position: 3
 slug: /design/time-sync
 partners:
 - uos

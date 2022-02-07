@@ -2,6 +2,7 @@
 id: agent-rpi
 title: Raspberry Pi based Agent
 sidebar_label: Raspberry Pi
+sidebar_positon: 2
 slug: /setup/agent/rpi
 ---
 

@@ -2,6 +2,7 @@
 id: agent-manual
 title: Manually via Script
 sidebar_label: Manually via Script
+sidebar_positon: 1
 slug: /setup/agent/manual
 ---
 

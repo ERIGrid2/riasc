@@ -2,6 +2,7 @@
 id: network-monitoring
 title: Monitoring of network conditions
 sidebar_label: Network Monitoring
+sidebar_position: 5
 slug: /design/network-monitoring
 partners:
 - rwth

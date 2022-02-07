@@ -1,8 +1,9 @@
 ---
 id: index
 title: Introduction
-sidebar_label: Introduction
+sidebar_label: 👋 Introduction
 slug: /
+sidebar_position: 1
 ---
 
 RIasC, an acronym for **R**esearch **I**nfrastructure **as** **C**ode, is a framework to accelerate distributed Research Infrastructure (RI) experiments.

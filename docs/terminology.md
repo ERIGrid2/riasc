@@ -1,7 +1,7 @@
 ---
 id: terminology
 title: Terminology
-sidebar_label: Terminology
+sidebar_label: ✍️ Terminology
 slug: /terminology
 ---
 

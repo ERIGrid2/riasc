@@ -2,6 +2,7 @@
 id: config
 title: Configuration File
 sidebar_label: Configuration
+sidebar_positon: 1
 slug: /setup/config
 ---
 

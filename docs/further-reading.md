@@ -1,7 +1,7 @@
 ---
 id: further-reading
-title: Further Reading
-sidebar_label: Further Reading
+title: 📚 Further Reading
+sidebar_position: 200
 slug: /further-reading
 ---
 
