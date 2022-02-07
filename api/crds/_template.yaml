@@ -18,3 +18,16 @@ externalDocs:
 paths: {}
 components:
   schemas: {}
+
+tags:
+- name: config
+  x-displayName: VILLASnode configuration file
+  description: |
+    This section decribes the schema of the VILLASnode configuration file.
+    Please use the `>` to expand the individual sub-sections.
+
+    <SchemaDefinition schemaRef="#/components/schemas/config" />
+
+x-tagGroups:
+- name: RIasC Custom Resources
+  tags: []
