@@ -11,11 +11,11 @@ This configuration file is used by the agent node to register itself in the RIas
 
 ## Location
 
-For [Raspberry Pi-based installations](./agent-rpi.md) the configuration file must be placed at `/boot/riasc.yaml` or the `boot` drive when the SD card is mounted in Windows.
+For [Raspberry Pi-based installations](./rpi.md) the configuration file must be placed at `/boot/riasc.yaml` or the `boot` drive when the SD card is mounted in Windows.
 
-For [manual installations](./agent-manual.md) via the script expect the configuration file named `riasc.yaml` in the current working directory.
+For [manual installations](./manual.md) via the script expect the configuration file named `riasc.yaml` in the current working directory.
 
-For [cloud-init installations](./agent-cloud-init.md) the contents of configuration file must be provided as instance metadata](https://cloudinit.readthedocs.io/en/latest/topics/instancedata.html).
+For [cloud-init installations](./cloud-init.md) the contents of configuration file must be provided as [instance metadata](https://cloudinit.readthedocs.io/en/latest/topics/instancedata.html).
 
 ## Example
 

@@ -9,39 +9,39 @@ partners:
 - rwth
 ---
 
-# Facts
+## Facts
 
-- **Helm Chart:** https://github.com/ERIGrid2/charts/tree/master/charts/time-sync
+- **Helm Chart:** [https://github.com/ERIGrid2/charts/tree/master/charts/time-sync](https://github.com/ERIGrid2/charts/tree/master/charts/time-sync)
 - **State:** under development
 
-# Introduction
+## Introduction
 
 This guide describes the steps to setup time-synchronization for embbeded single-board computers (SBCs) such as a Raspberry Pi.
 The time-synchronization relies on a comodity GPS module providing a pulse-per-second (PPS) output to a GPIO pin of the SBC.
 
-# Employed technologies
+## Employed technologies
 
 - [Chrony](https://chrony.tuxfamily.org/)
 - [GPSd](https://www.berlios.de/software/gpsd/)
 - Kubernetes:
   - [Node status-condition](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/#nodecondition-v1-core)
 
-# Applications
+## Applications
 
 - Time-delay compensation
 - Logging/timestamping/tracing of interface signals
 - [Network monitoring](network-monitoring.md)
 
-# Functional Requirements
+## Functional Requirements
 
 - Microsecond accuracy
 - Auto-configuration of sychronization source
 - Support for multiple synchronization sources
 - Reporting of sychronization status
 
-# Architecture
+## Architecture
 
-## Daemonset
+### Daemonset
 
 Time-synchronization is implemented by a cluster-wide _Daemonset_ which spawns a single _Pod_ on each cluster node.
 These _Pods_ execute three containers:
@@ -66,18 +66,18 @@ In addition to the shared sockets, some physical devices are mounted from the ho
 The gpsd container gets both the serial device `/dev/ttyAMA0` as well as the `/dev/pps0` device mounted.
 The chronyd container only gets the PPS device `/dev/pps0` mounted.
 
-## Linux kernel-level PPS device
+### Linux kernel-level PPS device
 
 Both gpsd and chronyd use the kernel-based PPS device order for the PPS `/dev/pps0` device to be created a special devicetree overlay needs to be loaded during boot-up.
 
-## Status reporting
+### Status reporting
 
 As mentioned above a dedicated `chronyd-monitor` container in the time-sync _Pods_ is used to periodically publish the current synchronization state from chronyd in the form of a _Node status-condition_ to the Kubernetes api-server.
 
 This container runs a [Python script](https://github.com/ERIGrid2/charts/blob/master/images/time-sync/chrony-monitor.py) which periodically calls the `chronyc tracking` and `chronyc sources` commnands to query the current synchronization status.
 Afterwards, the script will publish this status as _Node status-condition_ to the Kubernetes api-server as well include more details a annotations to the _Node_ resource.
 
-## Synchronization sources
+### Synchronization sources
 
 In order of their priority:
 
@@ -88,7 +88,7 @@ In order of their priority:
 3. [Network Time Protocol (NTP)](https://en.wikipedia.org/wiki/Network_Time_Protocol)
 4. [Real-time Clock (RTC)](https://en.wikipedia.org/wiki/Real-time_clock)
 
-# Testing
+## Testing
 
 1. Local testing
    - Two Raspberry Pis
@@ -100,7 +100,7 @@ In order of their priority:
 2. Reporting synchronization status between RIs
    - Retrieve sync status from Chrony
 
-# Further Reading
+## Further Reading
 
 - [Chrony Documentationd](https://chrony.tuxfamily.org/documentation.html)
 - [GPSD Time Service HOWTO](https://gpsd.gitlab.io/gpsd/gpsd-time-service-howto.html#_feeding_chrony_from_gpsd)

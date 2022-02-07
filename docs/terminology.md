@@ -9,6 +9,12 @@ slug: /terminology
 🚧 This page is under construction!
 :::
 
+### RIasC
+
+_RIasC_, an acronym for Research Infrastructure as Code, is a framework to accelerate distributed Research Infrastructure (RI) experiments.
+
+It is heavily inspired by the [Infrastructure-as-Code (IaC)](https://en.wikipedia.org/wiki/Infrastructure_as_code) process and uses on declarative configuration to setup distributed research experiments.
+
 ### Kubernetes, K8s
 
 _[Kubernetes](https://en.wikipedia.org/wiki/Kubernetes)_ (commonly stylized as K8s) is an open-source container orchestration system for automating software deployment, scaling, and management.

@@ -9,30 +9,30 @@ partners:
 - uos
 ---
 
-# Facts
+## Facts
 
-- **Source Code:** https://github.com/ERIGrid2/k8s-netmon
-- **Helm Chart:** https://github.com/ERIGrid2/charts/tree/master/charts/flent
+- **Source Code:** [https://github.com/ERIGrid2/k8s-netmon](https://github.com/ERIGrid2/k8s-netmon)
+- **Helm Chart:** [https://github.com/ERIGrid2/charts/tree/master/charts/flent](https://github.com/ERIGrid2/charts/tree/master/charts/flent)
 - **State:** to be implemented
 
-# Introduction
+## Introduction
 
 The _k8s-netmon_ component periodically performs network tests to measure letency and bandwidth between each and every node in the RIasC cloud.
 The gathered measurements are then used to construct graph in wich the vertices represent the nodes and edges are annotated with the measurements.
 
-## Collected Metrics
+### Collected Metrics
 
 - Connectivity
 - Latency
 - Bandwidth
 
-# Employed technologies
+## Employed technologies
 
 - [Flent](https://flent.org/)
 - Kubernetes:
   - [Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)
 
-# Architecture
+## Architecture
 
 `k8s-netmon` runs a Kubernetes controller which watches _TestSchedule_ custom resources (CR)s.
 Based on _TestSchedules_ CRs the controller will spawn _DaemonSets_ to execute individual test runs between a pair of nodes.
@@ -51,6 +51,7 @@ In addition, most recent measurments (e.g. ICMP ping RTT) can be stored in a Pro
 A dedicated Grafana instance is deployed in the cluster itself and can then be used to visualize the collected metrics.
 
 A dedicated Python program `k8s-netmon-graph` is used to retrieve the measurements from Promtheus and converts them into several different graph represenations for further processing:
+
 - Graphviz Dot file
 - Rendered SVG graph
 - GraphML[^3]
@@ -59,17 +60,17 @@ For this purpose `k8s-netmon-graph` implements a simple HTTP API.
 The rendered version of the graph is also embedded as an SVG graphic into the Grafana dashboard.
 
 For precise one-way delay measurements the accuracy of the system clocks is essential.
-To increase the accuracy of the clocks, a dedicated component 
+To increase the accuracy of the clocks, a dedicated component
 
-# Implementation details
+## Implementation details
 
-# Further reading
+## Further reading
 
 - [Flent](https://flent.org/)
-- https://github.com/simonswine/kube-latency
-- https://medium.com/flant-com/ping-monitoring-between-kubernetes-nodes-11e815f4eff1
+- [kube-latency](https://github.com/simonswine/kube-latency)
+- [https://medium.com/flant-com/ping-monitoring-between-kubernetes-nodes-11e815f4eff1](https://medium.com/flant-com/ping-monitoring-between-kubernetes-nodes-11e815f4eff1)
 
-- https://github.com/redlab-i/pps-tools
+- [pps-tools](https://github.com/redlab-i/pps-tools)
 - [Kubernetes DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)
 
 [^3]: http://graphml.graphdrawing.org/about.html

@@ -8,12 +8,12 @@ partners:
 - rwth
 ---
 
-# Facts
+## Facts
 
-- **Git Repo:** https://github.com/ERIGrid2/charts/tree/master/charts/kilo
+- **Git Repo:** [https://github.com/ERIGrid2/charts/tree/master/charts/kilo](https://github.com/ERIGrid2/charts/tree/master/charts/kilo)
 - **State:** under implementation
 
-# Introduction
+## Introduction
 
 Unlike in traditional cloud deployments, the participating agent nodes are usually not residing in the same network.
 As a consequence, direct communication between containers deployed on different agent nodes is not possible.
@@ -28,13 +28,13 @@ However, its important to note that the overlay network only establishes connect
 Connecting devices and services outside the cluster (e.g. in a dedicated laboratory network) is not supported by the overlay network.
 For this purpose a dedicated component, the [IP gateway](ip-gateway.md) is used.
 
-# Employed technologies
+## Employed technologies
 
 - [Wireguard](https://www.wireguard.com/)
 - [Kilo](https://github.com/squat/kilo)
 - [WICE](https://github.com/ERIGrid2/wice)
 
-# Architecture
+## Architecture
 
 The IP overlay network is implemented by a tool named _Kilo_.
 Kilo is a multi-cloud network overlay built on WireGuard and designed for Kubernetes.
@@ -43,27 +43,27 @@ The `kg` daemon completely automates the configuration of each VPN service by fa
 
 In addition another tool named _WICE_ is used for facilitating peer-to-peer connections via _Kilo_.
 
-# Implementation details
+## Implementation details
 
-## NAT-2-NAT hole punching
+### NAT-2-NAT hole punching
 
 Kilo supports UDP hole-punching in scenarios where two endpoints are located behind a NAT-firewall.
 
-See: https://github.com/squat/kilo/pull/146
+See: [https://github.com/squat/kilo/pull/146](https://github.com/squat/kilo/pull/146)
 
-In addition _WICE_, facilitates NAT-2-NAT connections by using _Interactive Connectivty Establishment_ (RFC8445)[https://datatracker.ietf.org/doc/html/rfc8445].
+In addition _WICE_, facilitates NAT-2-NAT connections by using _Interactive Connectivty Establishment_ [RFC8445](https://datatracker.ietf.org/doc/html/rfc8445).
 
-## STUN/TURN gateways for UDP-blocked corporate environments
+### STUN/TURN gateways for UDP-blocked corporate environments
 
 Currently Kilo will fail to establish VPN connection if the endpoint is located behind a symmetric NAT/firewall.
-To workaround this issue, (Interactive Connectivity Establishment (RFC8445)](https://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment) can be used.
+To workaround this issue, (Interactive Connectivity Establishment ([RFC8445](https://en.wikipedia.org/wiki/Interactive_Connectivity_Establishment)) can be used.
 
 [Wiretrustee](https://wiretrustee.com/) is a project implementing this feature.
 Work is ongoing to integrate this code into Kilo.
 
-See: https://github.com/squat/kilo/issues/189
+See: [https://github.com/squat/kilo/issues/189](https://github.com/squat/kilo/issues/189)
 
-# Further Reading
+## Further Reading
 
 - [Jordan Whited: WireGuard Endpoint Discovery and NAT Traversal using DNS-SD](https://www.jordanwhited.com/posts/wireguard-endpoint-discovery-nat-traversal/)
 - [David Anderson: How NAT traversal works, Tailscale](https://tailscale.com/blog/how-nat-traversal-works/)

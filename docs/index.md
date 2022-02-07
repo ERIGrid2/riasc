@@ -66,7 +66,7 @@ Both Intel/AMD x86 and ARM architectures supported.
 K3S has no other external dependencies besides the Linux kernel.
 This is a main factor to simplify the whole deployment of new nodes.
 
-Please refer to the [agent setup](./setup/agent.md) for more information.
+Please refer to the [agent setup](./setup/agent/index.md) for more information.
 
 ### Components
 

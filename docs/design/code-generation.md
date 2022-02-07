@@ -8,17 +8,17 @@ partners:
 - ait
 ---
 
-# Facts
+## Facts
 
-- **Git Repo:** 
+- **Git Repo:**
 - **State:** to be implemented
 
-# Introduction
+## Introduction
 
-# Employed technologies
+## Employed technologies
 
-# Architecture
+## Architecture
 
-# Implementation details
+## Implementation details
 
-# Further Reading
+## Further Reading

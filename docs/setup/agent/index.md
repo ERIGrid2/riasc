@@ -9,6 +9,6 @@ The setup of a new agent is relatively straight forward.
 
 We support the following methods:
 
-- [Manually via Script](./agent-manual.md) 
-- [Raspberry Pi](./agent-rpi.md)
-- [Cloud-init](./agent-cloud-init.md)
+- [Manually via Script](./manual.md)
+- [Raspberry Pi](./rpi.md)
+- [Cloud-init](./cloud-init.md)

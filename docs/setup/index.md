@@ -10,4 +10,4 @@ A typical RIasC setup consists of at least one central server and multiple distr
 The setup is therefore is organized in two phases:
 
 1. [Setup of Servers](./server.md)
-2. [Setup of Agents](./agent.md)
+2. [Setup of Agents](./agent/index.md)
