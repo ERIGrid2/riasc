@@ -17,15 +17,16 @@ spec:
     schema:
       openAPIV3Schema:
         type: object
+        description: |
+          A SchedulerConfig plans periodic tests to be performed by perfSONAR nodes in the cluster.
         properties:
           spec:
             type: object
             x-kubernetes-preserve-unknown-fields: true
             description: |
-              The spec part of a SchedulerConfig is equal to a JSON pSConfig template as
-              specified by perfSONARs pSConfig documentation:
+              A pSConfig configuratopn template as specified by perfSONARs pSConfig documentation:
 
-              https://docs.perfsonar.net/psconfig_templates_intro.html
+              More info: https://docs.perfsonar.net/psconfig_templates_intro.html
 
         # id: http://www.perfsonar.net/psconfig-schema#
         # "$schema": http://json-schema.org/draft-04/schema#

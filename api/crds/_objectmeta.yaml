@@ -1,6 +1,10 @@
 ---
 title: Object Metadata
 type: object
+description: |
+  Standard list metadata.
+  
+  More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 properties:
   name:
     type: string

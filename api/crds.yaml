@@ -1,16 +1,30 @@
 components:
   schemas:
     V1Chroma4Q:
+      description: 'The Chroma4Qs resource configures a physical Chroma 4 quadrant
+        grid emulator via SCPI over TCP/IP.
+
+        '
       properties:
         apiVersion:
+          description: APIVersion defines the versioned schema of this representation
+            of an object.
           enum:
           - device.riasc.eu/v1
           type: string
         kind:
+          description: Kind is a string value representing the REST resource this
+            object represents.
           enum:
           - Chroma4Q
           type: string
         metadata: &id001
+          description: 'Standard list metadata.
+
+
+            More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+
+            '
           properties:
             annotations:
               description: 'Annotations is an unstructured key value map stored with
@@ -103,6 +117,7 @@ components:
           title: Object Metadata
           type: object
         spec:
+          description: Chrom4q specification.
           properties:
             connection:
               properties:
@@ -203,74 +218,123 @@ components:
           type: object
       type: object
     V1Project:
+      description: 'A project provides a limited set of users access to a limited
+        set of nodes.
+
+        A project is backed by a Namespace and set of Roles and RoleBindings
+
+
+        More info:
+
+        - https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
+
+        - https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+
+        '
       properties:
         apiVersion:
+          description: APIVersion defines the versioned schema of this representation
+            of an object.
           enum:
           - riasc.eu/v1
           type: string
         kind:
+          description: Kind is a string value representing the REST resource this
+            object represents.
           enum:
           - Project
           type: string
         metadata: *id001
         spec:
+          description: Project specification.
           properties:
             nodeSelector:
+              description: 'NodeSelector is a selector which must be true for the
+                pod to fit on a node.
+
+                Selector which must match a node''s labels for the pod to be scheduled
+                on that node.
+
+
+                More info: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
+
+                '
+              example:
+                riasc.eu/lab: ait-smartest
               type: object
               x-kubernetes-preserve-unknown-fields: true
             nodes:
+              description: 'A list of node names to which users of this project have
+                access to.
+
+                '
+              example:
+              - rpi-rwth-1
+              - rpi-dtu-1
               items:
                 type: string
               type: array
             users:
+              example:
+              - svogel
+              - ogehrke
               items:
                 type: string
               type: array
           type: object
       type: object
     V1SchedulerConfig:
+      description: 'A SchedulerConfig plans periodic tests to be performed by perfSONAR
+        nodes in the cluster.
+
+        '
       properties:
         apiVersion:
+          description: APIVersion defines the versioned schema of this representation
+            of an object.
           enum:
           - riasc.eu/v1
           type: string
         kind:
+          description: Kind is a string value representing the REST resource this
+            object represents.
           enum:
           - SchedulerConfig
           type: string
         metadata: *id001
         spec:
-          description: 'The spec part of a SchedulerConfig is equal to a JSON pSConfig
-            template as
-
-            specified by perfSONARs pSConfig documentation:
+          description: 'A pSConfig configuratopn template as specified by perfSONARs
+            pSConfig documentation:
 
 
-            https://docs.perfsonar.net/psconfig_templates_intro.html
+            More info: https://docs.perfsonar.net/psconfig_templates_intro.html
 
             '
           type: object
           x-kubernetes-preserve-unknown-fields: true
       type: object
     V1TimeSyncConfig:
+      description: 'A TimeSyncConfig configures available time-synchronization sources.
+
+        '
       properties:
         apiVersion:
+          description: APIVersion defines the versioned schema of this representation
+            of an object.
           enum:
           - riasc.eu/v1
           type: string
         kind:
+          description: Kind is a string value representing the REST resource this
+            object represents.
           enum:
           - TimeSyncConfig
           type: string
         metadata: *id001
         spec:
-          default:
-            ntp: {}
-            pps: {}
-            ptp: {}
+          description: Time-synchronization specification.
           properties:
             chrony:
-              default: {}
               properties:
                 extraConfig:
                   default: ''
@@ -283,7 +347,6 @@ components:
                   type: string
               type: object
             gps:
-              default: {}
               properties:
                 device:
                   default: ttyAMA0
@@ -303,11 +366,9 @@ components:
                   type: array
               type: object
             nodeSelector:
-              default: {}
               type: object
               x-kubernetes-preserve-unknown-fields: true
             ntp:
-              default: {}
               properties:
                 client:
                   properties:
@@ -316,7 +377,6 @@ components:
                       type: boolean
                   type: object
                 server:
-                  default: {}
                   properties:
                     allow:
                       default:
@@ -327,7 +387,6 @@ components:
                         type: string
                       type: array
                     deny:
-                      default: []
                       description: Access control list
                       items:
                         type: string
@@ -346,7 +405,6 @@ components:
                       type: integer
                   type: object
                 servers:
-                  default: []
                   items:
                     properties:
                       address:
@@ -363,7 +421,6 @@ components:
                   type: array
               type: object
             pps:
-              default: {}
               properties:
                 device:
                   default: pps0
@@ -378,7 +435,6 @@ components:
                   type: integer
               type: object
             ptp:
-              default: {}
               properties:
                 device:
                   default: ptp0
@@ -424,10 +480,14 @@ components:
     V1TrafficProfile:
       properties:
         apiVersion:
+          description: APIVersion defines the versioned schema of this representation
+            of an object.
           enum:
           - k8s-netem.riasc.eu/v1
           type: string
         kind:
+          description: Kind is a string value representing the REST resource this
+            object represents.
           enum:
           - TrafficProfile
           type: string
@@ -734,22 +794,40 @@ tags:
     '
   name: config
   x-displayName: VILLASnode configuration file
-- description: <SchemaDefinition schemaRef="#/components/schemas/V1Chroma4Q" />
+- description: 'The Chroma4Qs resource configures a physical Chroma 4 quadrant grid
+    emulator via SCPI over TCP/IP.
+
+    <SchemaDefinition schemaRef="#/components/schemas/V1Chroma4Q" />'
   name: crd-v1-chroma4q
   x-displayName: Chroma4Qs v1 device.riasc.eu
-- description: <SchemaDefinition schemaRef="#/components/schemas/V1Project" />
+- description: 'A project provides a limited set of users access to a limited set
+    of nodes.
+
+    A project is backed by a Namespace and set of Roles and RoleBindings
+
+
+    More info:
+
+    - https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
+
+    - https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+
+    <SchemaDefinition schemaRef="#/components/schemas/V1Project" />'
   name: crd-v1-project
   x-displayName: Projects v1 riasc.eu
 - description: <SchemaDefinition schemaRef="#/components/schemas/V1TrafficProfile"
     />
   name: crd-v1-trafficprofile
   x-displayName: TrafficProfiles v1 k8s-netem.riasc.eu
-- description: <SchemaDefinition schemaRef="#/components/schemas/V1TimeSyncConfig"
-    />
+- description: 'A TimeSyncConfig configures available time-synchronization sources.
+
+    <SchemaDefinition schemaRef="#/components/schemas/V1TimeSyncConfig" />'
   name: crd-v1-timesyncconfig
   x-displayName: TimeSyncConfigs v1 riasc.eu
-- description: <SchemaDefinition schemaRef="#/components/schemas/V1SchedulerConfig"
-    />
+- description: 'A SchedulerConfig plans periodic tests to be performed by perfSONAR
+    nodes in the cluster.
+
+    <SchemaDefinition schemaRef="#/components/schemas/V1SchedulerConfig" />'
   name: crd-v1-schedulerconfig
   x-displayName: SchedulerConfigs v1 riasc.eu
 x-tagGroups:

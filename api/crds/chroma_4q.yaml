@@ -18,9 +18,13 @@ spec:
     schema:
       openAPIV3Schema:
         type: object
+        description: |
+          The Chroma4Qs resource configures a physical Chroma 4 quadrant grid emulator via SCPI over TCP/IP.
         properties:
           spec:
             type: object
+            description: Chrom4q specification.
+
             properties:
               state:
                 type: string

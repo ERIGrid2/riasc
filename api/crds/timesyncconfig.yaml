@@ -19,25 +19,23 @@ spec:
     schema:
       openAPIV3Schema:
         type: object
+        description: |
+          A TimeSyncConfig configures available time-synchronization sources.
+
         properties:
 
           spec:
             type: object
-            default:
-              ntp: {}
-              ptp: {}
-              pps: {}
+            description: Time-synchronization specification.
 
             properties:
 
               nodeSelector:
                 type: object
-                default: {}
                 x-kubernetes-preserve-unknown-fields: true
 
               ntp:
                 type: object
-                default: {}
                 properties:
                   client:
                     type: object
@@ -48,7 +46,6 @@ spec:
 
                   servers:
                     type: array
-                    default: []
                     items:
                       type: object
                       x-kubernetes-preserve-unknown-fields: true
@@ -64,7 +61,6 @@ spec:
                           example: ntp1.rwth-aachen.de
 
                   server:
-                    default: {}
                     type: object
                     properties:
                       enabled:
@@ -95,13 +91,11 @@ spec:
                       deny:
                         description: Access control list
                         type: array
-                        default: []
                         items:
                           type: string
 
               gps:
                 type: object
-                default: {}
                 properties:
                   enabled:
                     type: boolean
@@ -122,7 +116,6 @@ spec:
 
               pps:
                 type: object
-                default: {}
                 properties:
                   enabled:
                     type: boolean
@@ -141,7 +134,6 @@ spec:
 
               ptp:
                 type: object
-                default: {}
                 properties:
                   enabled:
                     type: boolean
@@ -188,7 +180,6 @@ spec:
 
               chrony:
                 type: object
-                default: {}
                 properties:
                   extraConfig:
                     type: string

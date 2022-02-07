@@ -42,19 +42,24 @@ if __name__ == '__main__':
             schema['properties']['metadata'] = tpl_objectmeta
             schema['properties']['kind'] = {
                 'type': 'string',
-                'enum': [kind]
+                'enum': [kind],
+                'description': 'Kind is a string value representing the REST resource this object represents.'
             }
             schema['properties']['apiVersion'] = {
                 'type': 'string',
-                'enum': [f'{group}/{version_name}']
+                'enum': [f'{group}/{version_name}'],
+                'description': 'APIVersion defines the versioned schema of this representation of an object.'
             }
             
             schemas[schema_name] = schema
 
+            desc = schema.get('description', '')
+            desc += f'<SchemaDefinition schemaRef="#/components/schemas/{schema_name}" />'
+
             tags.append({
                 'name': tag_name,
                 'x-displayName': f'{kind}s {version_name} {group}',
-                'description': f'<SchemaDefinition schemaRef="#/components/schemas/{schema_name}" />'
+                'description': desc
             })
 
             tag_groups[0]['tags'].append(tag_name)
