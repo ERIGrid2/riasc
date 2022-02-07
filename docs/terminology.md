@@ -34,6 +34,10 @@ A _[Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deploy
 
 You describe a desired state in a Deployment, and the Deployment Controller changes the actual state to the desired state at a controlled rate. You can define Deployments to create new ReplicaSets, or to remove existing Deployments and adopt all their resources with new Deployments.
 
+#### CustomResourceDescription
+
+_[Custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)_ are extensions of the Kubernetes API. This page discusses when to add a custom resource to your Kubernetes cluster and when to use a standalone service. It describes the two methods for adding custom resources and how to choose between them.
+
 ### Overlay Network
 
 An _[overlay network](https://en.wikipedia.org/wiki/Overlay_network)_ is a computer network that is layered on top of (or tunneled through) another network.
