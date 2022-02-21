@@ -2,7 +2,7 @@
 id: ip-gateway
 title: IP-Gateway/NAT for cluster-external devices 
 sidebar_label: IP-Gateway/NAT
-sidebar_position: 2
+sidebar_position: 3
 slug: /design/ip-gateway
 partners:
 - rwth

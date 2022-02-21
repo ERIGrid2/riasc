@@ -14,7 +14,6 @@ slug: /usage/time-sync
     - [Adafruit GPS Hat, RS-Online](https://de.rs-online.com/web/p/raspberry-pi-hats-und-add-ons/1245481/?cm_mmc=de-ds-_-web-_-ds%3Adiscover-de%3Aall-technologies-de%3Araspberry-pi-de%3Aadd-gps-time-and-location-to-a-raspberry-pi-project-de_fp-_-1245481)
 - 1x GPS antenna and cabeling (optional)
 
-
 ## Setup
 
 For accurate network latency measurements the Raspberry Pi clock can be sychronized via GPS.
@@ -29,6 +28,16 @@ Connect the GPS receiver according to the following table:
 | RX             | 8                      | GPIO 14 / TXD0 | RPi -> GPS |
 | TX             | 10                     | GPIO 15 / RXD0 | GPS -> RPi |
 | PPS            | 12                     | GPIO 18        | GPS -> RPi |
+
+<figure align="center">
+    <img alt="Wiring" src="/img/rpi_gps_timesync.png" width="90%" />
+    <figcaption>Wiring.</figcaption>
+</figure>
+
+<figure align="center">
+    <img alt="Adafruit Ultimate GPS Hat" src="/img/adafruit_ultimate_gps_hat.png" width="90%" />
+    <figcaption>Adafruit Ultimate GPS Hat.</figcaption>
+</figure>
 
 
 ## Configuration

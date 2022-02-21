@@ -2,7 +2,7 @@
 id: ip-overlay
 title: Transparent IP Overlay Network
 sidebar_label: Overlay Network
-sidebar_position: 1
+sidebar_position: 2
 slug: /design/ip-overlay
 partners:
 - rwth

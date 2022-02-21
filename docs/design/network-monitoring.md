@@ -2,7 +2,7 @@
 id: network-monitoring
 title: Monitoring of network conditions
 sidebar_label: Network Monitoring
-sidebar_position: 5
+sidebar_position: 6
 slug: /design/network-monitoring
 partners:
 - rwth
@@ -61,6 +61,11 @@ The rendered version of the graph is also embedded as an SVG graphic into the Gr
 
 For precise one-way delay measurements the accuracy of the system clocks is essential.
 To increase the accuracy of the clocks, a dedicated component
+
+<figure align="center">
+    <img alt="Perfsonar architecture" src="/img/perfsonar_architecture.png" width="90%" />
+    <figcaption>Provisioning flow.</figcaption>
+</figure>
 
 ## Implementation details
 

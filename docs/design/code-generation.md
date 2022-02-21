@@ -2,7 +2,7 @@
 id: code-generation
 title: PSAL Code Generation
 sidebar_label: PSAL Code Generation
-sidebar_position: 6
+sidebar_position: 7
 slug: /design/code-generation
 partners:
 - ait

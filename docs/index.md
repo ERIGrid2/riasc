@@ -51,7 +51,11 @@ graph TD
 
 The following figure illustrates an exemplary setup of RIasC.
 
-![](architecture.svg)
+<figure align="center">
+    <img alt="Architecture" src="/img/architecture.svg" width="90%" />
+    <figcaption>Architecture.</figcaption>
+</figure>
+
 
 In this case three laboratories are coupled via a distributed Kubernetes cloud.
 RIasC uses K3S as its Kubernetes distribution which is optimized for lighweight deployments on _edge_ devices which run the K3S _agent_ process.
@@ -83,7 +87,33 @@ Currently to following existing tools are deployed by RIasC:
 - [VILLASframework](https://fein-aachen.org/projects/villas-framework/)
 - [Power System Automation Language(PSAL)](https://www.mdpi.com/1996-1073/10/3/374/htm)
 
-![](stack.png)
+<figure align="center">
+    <img alt="Software Stack" src="/img/stack.png" width="90%" />
+    <figcaption>Software Stack.</figcaption>
+</figure>
+
+### Concept
+
+#### Kubernetes
+
+<figure align="center">
+    <img alt="Kubernetes Cluster" src="/img/kubernetes_cluster.png" width="70%" />
+    <figcaption>Kubernetes Cluster.</figcaption>
+</figure>
+
+
+#### Operators
+
+<figure align="center">
+    <img alt="Kubernetes Operators" src="/img/operator.png" width="90%" />
+    <figcaption>Kubernetes Operators.</figcaption>
+</figure>
+
+<figure align="center">
+    <img alt="Operator Reconciliation" src="/img/reconciliation.png" width="70%" />
+    <figcaption>Operator Reconciliation.</figcaption>
+</figure>
+
 ## Credits
 
 RIasC is developed as part of the [European H2020 project ERIGrid 2.0](https://erigrid2.eu) in the work package JRA2.2 "Real-time coupling and HIL approaches".
