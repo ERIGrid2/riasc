@@ -22,7 +22,7 @@ This is enabled by the interconnection of research infrastructures between diffe
 
 Among other services, RIasC provides an transparent [overlay network](../design/ip-overlay.md) to establish IP connectivity between the locations.
 This IP overlay network is established via a peer-to-peer topology.
-Meaning, as long as permitted by network policies, traffic will be exchanged directly between each of the labs rather than beeing routed over a central VPN gateway. 
+Meaning, as long as permitted by network policies, traffic will be exchanged directly between each of the labs rather than beeing routed over a central VPN gateway.
 In cases where direct communication is blocked, traffic is rerouted over a third party.
 Hence, from a user perspective, all participating laboratories appear to connected to the same local network.
 
@@ -42,7 +42,7 @@ Last but not least, a dedicated Kubernetes operator is used to manage test sched
 The network monitoring service depends on two other RIasC services:
 
 - **IP Overlay Network:** In order to perform actual network tests, an IP connectivity between the testing endpoints is required. This connectivity can either be provided by the existing local or wide-area networks (the Internet). However, in most cases testpoints are either not located within the same local network or their direct communication is prohibited by firewalls. In theses cases the network monitoring tests can utilize the overlay network to tunnel the execution of tests through the overlay network.
-- **Time-synchronization:** Some network tests measure a one-way delay (OWD) between two testing endpoints. This is facilitated by sending a timestamp of the current time from one testpoint to another an calculating the difference upon receiption. However, this is only possible as long as both the local clocks of the sending and receiving endpoints are synchronized. 
+- **Time-synchronization:** Some network tests measure a one-way delay (OWD) between two testing endpoints. This is facilitated by sending a timestamp of the current time from one testpoint to another an calculating the difference upon receiption. However, this is only possible as long as both the local clocks of the sending and receiving endpoints are synchronized.
 
 ### Collected Metrics
 

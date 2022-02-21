@@ -5,10 +5,6 @@ sidebar_label: ✍️ Terminology
 slug: /terminology
 ---
 
-:::info
-🚧 This page is under construction!
-:::
-
 ### RIasC
 
 _RIasC_, an acronym for Research Infrastructure as Code, is a framework to accelerate distributed Research Infrastructure (RI) experiments.
