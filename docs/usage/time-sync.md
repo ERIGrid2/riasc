@@ -30,21 +30,20 @@ Connect the GPS receiver according to the following table:
 | PPS            | 12                     | GPIO 18        | GPS -> RPi |
 
 <figure align="center">
-    <img alt="Wiring" src="/img/rpi_gps_timesync.png" width="90%" />
+    <img alt="Wiring" src="/img/rpi_gps_timesync.png" width="75%" />
     <figcaption>Wiring.</figcaption>
 </figure>
 
 <figure align="center">
-    <img alt="Adafruit Ultimate GPS Hat" src="/img/adafruit_ultimate_gps_hat.png" width="90%" />
+    <img alt="Adafruit Ultimate GPS Hat" src="/img/adafruit_ultimate_gps_hat.png" width="30%" />
     <figcaption>Adafruit Ultimate GPS Hat.</figcaption>
 </figure>
 
-
 ## Configuration
 
-The time synchronzation is configured via the [RIasC Helm chart](https://github.com/ERIGrid2/charts/tree/master/charts/time-sync).
-
-It is automatically enabled for all nodes.
+:::info
+🚧 This page is under construction!
+:::
 
 ### Configuring Linux PPS device on Raspberry Pi
 
