@@ -19,7 +19,7 @@
     "mermaid": "^8.13.10",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "redocusaurus": "^0.6.0",
+    "redocusaurus": "^0.7.0",
     "remark-mermaid": "^0.2.0"
   },
   "browserslist": {
