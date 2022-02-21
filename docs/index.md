@@ -72,7 +72,7 @@ This is a main factor to simplify the whole deployment of new nodes.
 
 Please refer to the [agent setup](./setup/agent/index.md) for more information.
 
-### Components
+### Services
 
 RIasC relies on a collection of existing software tools and projects.
 It combines these tools by providing reference examples and configurations benefiting researchs by a simpler and approachable access to cloud technologies. 

@@ -26,7 +26,7 @@ As the overlay network establishes connectivty between all nodes.
 The Kubernetes cluster networks can be used as on any other Kubernetes cluster.
 However, its important to note that the overlay network only establishes connectivity between IPs/containers within the cluster.
 Connecting devices and services outside the cluster (e.g. in a dedicated laboratory network) is not supported by the overlay network.
-For this purpose a dedicated component, the [IP gateway](ip-gateway.md) is used.
+For this purpose a dedicated service, the [IP gateway](ip-gateway.md) is used.
 
 ## Employed technologies
 
