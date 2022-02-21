@@ -12,7 +12,7 @@ partners:
 ## Facts
 
 - **Helm Chart:** [https://github.com/ERIGrid2/charts/tree/master/charts/time-sync](https://github.com/ERIGrid2/charts/tree/master/charts/time-sync)
-- **State:** under development
+- **State:** implementation finished
 
 ## Introduction
 

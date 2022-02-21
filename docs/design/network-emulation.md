@@ -13,7 +13,7 @@ partners:
 
 - **Git Repo:** [https://github.com/ERIGrid2/k8s-netem](https://github.com/ERIGrid2/k8s-netem)
 - **Helm Chart:** [https://github.com/ERIGrid2/charts/tree/master/charts/netem](https://github.com/ERIGrid2/charts/tree/master/charts/netem)
-- **State:** under development
+- **State:** under testing
 
 ## Introduction
 
