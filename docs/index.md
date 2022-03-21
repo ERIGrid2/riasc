@@ -41,11 +41,10 @@ RIasC simplifies the setup of such distributed setups by providing a transparent
 
 ## Worklow
 
-import Mermaid from '@theme/Mermaid';
-<Mermaid chart={`
+```mermaid
 graph TD
     Start --> Stop
-`} />
+```
 
 ## Architecture
 
@@ -55,7 +54,6 @@ The following figure illustrates an exemplary setup of RIasC.
     <img alt="Architecture" src="/img/architecture.svg" width="90%" />
     <figcaption>Architecture.</figcaption>
 </figure>
-
 
 In this case three laboratories are coupled via a distributed Kubernetes cloud.
 RIasC uses K3S as its Kubernetes distribution which is optimized for lighweight deployments on _edge_ devices which run the K3S _agent_ process.
@@ -75,7 +73,7 @@ Please refer to the [agent setup](./setup/agent/index.md) for more information.
 ### Services
 
 RIasC relies on a collection of existing software tools and projects.
-It combines these tools by providing reference examples and configurations benefiting researchs by a simpler and approachable access to cloud technologies. 
+It combines these tools by providing reference examples and configurations benefiting researchs by a simpler and approachable access to cloud technologies.
 
 Currently to following existing tools are deployed by RIasC:
 
@@ -100,7 +98,6 @@ Currently to following existing tools are deployed by RIasC:
     <img alt="Kubernetes Cluster" src="/img/kubernetes_cluster.png" width="70%" />
     <figcaption>Kubernetes Cluster.</figcaption>
 </figure>
-
 
 #### Operators
 

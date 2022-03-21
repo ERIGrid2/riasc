@@ -19,7 +19,6 @@ _[Kubernetes](https://en.wikipedia.org/wiki/Kubernetes)_ (commonly stylized as K
 
 _[Pods](https://kubernetes.io/docs/concepts/workloads/pods/)_ are the smallest deployable units of computing that you can create and manage in Kubernetes.
 
-
 #### Daemonset
 
 A _[DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)_ ensures that all (or some) Nodes run a copy of a Pod. As nodes are added to the cluster, Pods are added to them. As nodes are removed from the cluster, those Pods are garbage collected. Deleting a DaemonSet will clean up the Pods it created.
@@ -52,7 +51,7 @@ _[netem](https://wiki.linuxfoundation.org/networking/netem)_ provides Network Em
 
 ### Iperf3
 
-_[iPerf3](https://iperf.fr/)_ is a tool for active measurements of the maximum achievable bandwidth on IP networks. It supports tuning of various parameters related to timing, buffers and protocols (TCP, UDP, SCTP with IPv4 and IPv6). For each test it reports the bandwidth, loss, and other parameters. 
+_[iPerf3](https://iperf.fr/)_ is a tool for active measurements of the maximum achievable bandwidth on IP networks. It supports tuning of various parameters related to timing, buffers and protocols (TCP, UDP, SCTP with IPv4 and IPv6). For each test it reports the bandwidth, loss, and other parameters.
 
 ### Ping
 
