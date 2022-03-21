@@ -17,12 +17,12 @@ partners:
 
 Unlike in traditional cloud deployments, the participating agent nodes are usually not residing in the same network.
 As a consequence, direct communication between containers deployed on different agent nodes is not possible.
-To solve this restriction a transparent overlay network is established between all agend and master nodes.
+To solve this restriction a transparent overlay network is established between all agent and master nodes.
 This overlay network employs Virtual Private Network (VPN) solutions to create a mesh of peer-to-peer connections between all nodes in the cloud.
-Within this overlay network all deployed containers are assigned an IP from the cluster internat subnet (usually) `10.42.0.0/16`).
+Within this overlay network all deployed containers are assigned an IP from the cluster internal subnet (usually) `10.42.0.0/16`).
 Containers can use these addresses (and also Kubernetes ClusterIPs) to communicate with each other even if they are deployed on different nodes in different sites.
 
-As the overlay network establishes connectivty between all nodes.
+As the overlay network establishes connectivity between all nodes.
 The Kubernetes cluster networks can be used as on any other Kubernetes cluster.
 However, its important to note that the overlay network only establishes connectivity between IPs/containers within the cluster.
 Connecting devices and services outside the cluster (e.g. in a dedicated laboratory network) is not supported by the overlay network.

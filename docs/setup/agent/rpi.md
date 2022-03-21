@@ -34,7 +34,7 @@ The setup of an Raspberry Pi single-board computer is the easiest way to partici
 6. Wait until provisioning completes.
    - The first boot will take a while (> 10 minutes)
    - You can follow the process by attaching a screen to the Raspberry Pi
-   - ..or run the following command after login via SSH: `sudo journalctl -fu riasc-update`   
+   - ..or run the following command after login via SSH: `sudo journalctl -fu riasc-update`
    - The Raspberry Pi will reboot several times during the process.
    - Once finished the the console should print `RIasC update completed successfully!`
 7. Verify that the node has been provisioned successfully:
@@ -42,15 +42,14 @@ The setup of an Raspberry Pi single-board computer is the easiest way to partici
      - User: `pi`
      - Password: `raspberry`
      - Login via SSH is also possible
-   2. Check the status of the `riasc-update` service by running the following command: `sudo systemctl status riasc-update`
+   1. Check the status of the `riasc-update` service by running the following command: `sudo systemctl status riasc-update`
 8. Change the default password:
    - Run the `passwd` command and follow the instructions
 
-
 ## Screenshots
 
-![](balena_select_url.png)
-![](balena_url.png)
-![](balena_select_target.png)
-![](balena_flashing.png)
-![](balena_finished.png)
+![Balena select URL](balena_select_url.png)
+![Balena URL](balena_url.png)
+![Balena select target](balena_select_target.png)
+![Balena flashing](balena_flashing.png)
+![Balena finish](balena_finished.png)

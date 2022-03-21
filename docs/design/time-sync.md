@@ -16,8 +16,8 @@ partners:
 
 ## Introduction
 
-This guide describes the steps to setup time-synchronization for embbeded single-board computers (SBCs) such as a Raspberry Pi.
-The time-synchronization relies on a comodity GPS module providing a pulse-per-second (PPS) output to a GPIO pin of the SBC.
+This guide describes the steps to setup time-synchronization for embedded single-board computers (SBCs) such as a Raspberry Pi.
+The time-synchronization relies on a commodity GPS module providing a pulse-per-second (PPS) output to a GPIO pin of the SBC.
 
 ## Employed technologies
 
@@ -43,7 +43,7 @@ The time-synchronization relies on a comodity GPS module providing a pulse-per-s
 
 ### Daemonset
 
-Time-synchronization is implemented by a cluster-wide _Daemonset_ which spawns a single _Pod_ on each cluster node.
+Time-synchronization is implemented by a cluster-wide _DaemonSet_ which spawns a single _Pod_ on each of the cluster nodes.
 These _Pods_ execute three containers:
 
 - `chronyd`
@@ -74,16 +74,16 @@ Both gpsd and chronyd use the kernel-based PPS device order for the PPS `/dev/pp
 
 As mentioned above a dedicated `chronyd-monitor` container in the time-sync _Pods_ is used to periodically publish the current synchronization state from chronyd in the form of a _Node status-condition_ to the Kubernetes api-server.
 
-This container runs a [Python script](https://github.com/ERIGrid2/charts/blob/master/images/time-sync/chrony-monitor.py) which periodically calls the `chronyc tracking` and `chronyc sources` commnands to query the current synchronization status.
+This container runs a [Python script](https://github.com/ERIGrid2/charts/blob/master/images/time-sync/chrony-monitor.py) which periodically calls the `chronyc tracking` and `chronyc sources` commands to query the current synchronization status.
 Afterwards, the script will publish this status as _Node status-condition_ to the Kubernetes api-server as well include more details a annotations to the _Node_ resource.
 
 ### Synchronization sources
 
-In order of their priority:
+In the order of their priority:
 
 1. [Pulse-per-second signal (PPS)](https://en.wikipedia.org/wiki/Pulse-per-second_signal)
    1. Kernel-based PPS (kPPS)
-   2. Userspace PPS
+   2. User-space PPS
 2. [Precision Time Protocol (PTP)](https://en.wikipedia.org/wiki/Precision_Time_Protocol)
 3. [Network Time Protocol (NTP)](https://en.wikipedia.org/wiki/Network_Time_Protocol)
 4. [Real-time Clock (RTC)](https://en.wikipedia.org/wiki/Real-time_clock)

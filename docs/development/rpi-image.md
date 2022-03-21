@@ -14,6 +14,6 @@ This page documents the procedure for creating a Raspberry Pi SD card image whic
    - Fedora/CentOS/RHEL: `dnf install libguestfs-tools wget zip`
 1. Clone the riasc-provisioning Git repository:
    - `git clone https://github.com/ERIGrid2/riasc-provisioning`
-2. Create image:
+1. Create image:
    - `cd riasc-provisioning/rpi`
    - `bash create_image.sh`

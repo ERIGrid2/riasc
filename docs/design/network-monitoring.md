@@ -22,7 +22,7 @@ This is enabled by the interconnection of research infrastructures between diffe
 
 Among other services, RIasC provides an transparent [overlay network](../design/ip-overlay.md) to establish IP connectivity between the locations.
 This IP overlay network is established via a peer-to-peer topology.
-Meaning, as long as permitted by network policies, traffic will be exchanged directly between each of the labs rather than beeing routed over a central VPN gateway.
+Meaning, as long as permitted by network policies, traffic will be exchanged directly between each of the labs rather than being routed over a central VPN gateway.
 In cases where direct communication is blocked, traffic is rerouted over a third party.
 Hence, from a user perspective, all participating laboratories appear to connected to the same local network.
 

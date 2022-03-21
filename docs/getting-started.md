@@ -7,7 +7,9 @@ slug: /getting-started/
 ---
 
 :::info
+
 Some of the information on this site is only valid in the context of the [ERIGrid 2.0](https://erigrid2.eu) project.
+
 :::
 
 1. Request token and hostname for cluster access:
