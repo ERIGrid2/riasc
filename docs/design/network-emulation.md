@@ -58,9 +58,135 @@ The builtin TC controller uses [iproute2](https://wiki.linuxfoundation.org/netwo
 
 ### Flexe (VTT Network Emulator)
 
+The Flexe controller is software developed by [VTT](https://www.vtt.fi/), which is based on Linux [iproute2](https://wiki.linuxfoundation.org/networking/iproute2)'s `tc` command like builtin TC controller, but has more functionalities added to it. Software have been extended to support have several traffic profiles running from time to time, added REST API for making the qdisc / filter / netem configuration changes, etc.
+
 ## Example
 
-### Example Profile
+### Example Profile for builtin controller
+
+### Example Profile for Flexe controller
+
+    ---
+    apiVersion: k8s-netem.riasc.eu/v1
+    kind: TrafficProfile
+    metadata:
+      name: profile-delay-jitter-flexe
+    spec:
+      podSelector:
+        matchLabels:
+          traffic-profile: profile-delay-jitter-flexe
+
+      type: Flexe
+
+      parameters:
+        segments:
+        - repeat: True
+
+        profiles:
+        - name: ethernet
+          parameters:
+            runTime: 30
+
+            bandwidthUp: 100000
+            bandwidthDown: 100000
+            delay: 0.25
+            delayVariation: 0.25
+            delayCorrelation: 0
+            loss: 0
+            lossCorrelation: 0
+            duplication: 0
+            corruption: 0
+            reorder: 0
+            reorderCorrelation: 0
+
+        - name: 3g
+          parameters:
+            runTime: 30
+
+            bandwidthUp: 256
+            bandwidthDown: 256
+            delay: 200
+            delayVariation: 50
+            delayCorrelation: 0
+            loss: 0.5
+            lossCorrelation: 0
+            duplication: 0.1
+            corruption: 0.1
+            reorder: 0.2
+            reorderCorrelation: 0
+
+        - name: gprs
+          parameters:
+            bandwidthUp: 60
+            bandwidthDown: 60
+            delay: 350
+            delayVariation: 100
+            delayCorrelation: 0
+            loss: 0.5
+            lossCorrelation: 0
+            duplication: 0.1
+            corruption: 0.1
+            reorder: 0.2
+            reorderCorrelation: 0
+
+        - name: lte
+          parameters:
+            bandwidthUp: 5000
+            bandwidthDown: 15000
+            delay: 7.5
+            delayVariation: 5
+            delayCorrelation: 0
+            loss: 0.025
+            lossCorrelation: 0
+            duplication: 0
+            corruption: 0
+            reorder: 0
+            reorderCorrelation: 0
+
+        - name: xdsl
+          parameters:
+            bandwidthUp: 2000
+            bandwidthDown: 15000
+            delay: 7.5
+            delayVariation: 2.5
+            delayCorrelation: 0
+            loss: 0
+            lossCorrelation: 0
+            duplication: 0
+            corruption: 0
+            reorder: 0
+            reorderCorrelation: 0
+
+      egress:
+      - to:
+        - ipBlock:
+            cidr: 1.1.1.1/32
+
+        - podSelector:
+            matchLabels:
+              component: example
+
+        ports:
+        - port: 443
+          protocol: TCP
+        - port: 53
+          protocol: UDP
+
+      - to:
+        - ipBlock:
+            cidr: 8.8.8.8/32
+
+      - ports:
+        - port: 80
+          protocol: tcp
+
+      ingress:
+      - ports:
+        - port: 1234
+      - from:
+        - podSelector:
+            matchLabels:
+              traffic-profile: profile-delay-jitter-flexe
 
 ### Example Pod
 
