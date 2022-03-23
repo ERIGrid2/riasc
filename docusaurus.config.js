@@ -8,6 +8,7 @@ module.exports = {
     favicon: 'img/logos/riasc.svg',
     organizationName: 'ERIGrid2',
     projectName: 'riasc',
+    plugins: [require.resolve("@cmfcmf/docusaurus-search-local")],
     themeConfig: {
         hideableSidebar: true,
         navbar: {
