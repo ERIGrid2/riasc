@@ -51,7 +51,7 @@ Kilo supports UDP hole-punching in scenarios where two endpoints are located beh
 
 See: [https://github.com/squat/kilo/pull/146](https://github.com/squat/kilo/pull/146)
 
-In addition _WICE_, facilitates NAT-2-NAT connections by using _Interactive Connectivty Establishment_ [RFC8445](https://datatracker.ietf.org/doc/html/rfc8445).
+In addition _WICE_, facilitates NAT-2-NAT connections by using _Interactive Connectivity Establishment_ [RFC8445](https://datatracker.ietf.org/doc/html/rfc8445).
 
 ### STUN/TURN gateways for UDP-blocked corporate environments
 

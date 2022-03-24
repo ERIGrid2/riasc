@@ -29,19 +29,19 @@ The time-synchronization relies on a commodity GPS module providing a pulse-per-
 ## Applications
 
 - Time-delay compensation
-- Logging/timestamping/tracing of interface signals
+- Logging/time-stamping/tracing of interface signals
 - [Network monitoring](network-monitoring.md)
 
 ## Functional Requirements
 
 - Microsecond accuracy
-- Auto-configuration of sychronization source
+- Auto-configuration of synchronization source
 - Support for multiple synchronization sources
-- Reporting of sychronization status
+- Reporting of synchronization status
 
 ## Architecture
 
-### Daemonset
+### DaemonSet
 
 Time-synchronization is implemented by a cluster-wide _DaemonSet_ which spawns a single _Pod_ on each of the cluster nodes.
 These _Pods_ execute three containers:
@@ -102,6 +102,6 @@ In the order of their priority:
 
 ## Further Reading
 
-- [Chrony Documentationd](https://chrony.tuxfamily.org/documentation.html)
-- [GPSD Time Service HOWTO](https://gpsd.gitlab.io/gpsd/gpsd-time-service-howto.html#_feeding_chrony_from_gpsd)
+- [Chrony Documentation](https://chrony.tuxfamily.org/documentation.html)
+- [GPSD Time Service How-to](https://gpsd.gitlab.io/gpsd/gpsd-time-service-howto.html#_feeding_chrony_from_gpsd)
 - [Linux Kernel Documentation: PPS - Pulse Per Second](https://www.kernel.org/doc/html/latest/driver-api/pps.html)

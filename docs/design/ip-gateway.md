@@ -16,7 +16,7 @@ partners:
 
 ## Introduction
 
-As outlined in the [IP overlay network](ip-overlay.md) design document, Kubernetes networking only facilicates communication between containers inside the cloud.
+As outlined in the [IP overlay network](ip-overlay.md) design document, Kubernetes networking only facilitates communication between containers inside the cloud.
 The _IP gateway_ component extends the Kubernetes networking concept to enable IP communication with cluster-external devices and services.
 This is implemented by allocating a cluster-internal IP address to each external device.
 Network address translation is then used to establish the link between cluster-internal and -external addresses.

@@ -16,7 +16,7 @@ partners:
 ## Introduction
 
 The provisioning component is responsible for quickly adding new nodes to the RIasC cluster with minimal effort.
-It does so by generating preconfigured system OS images (e.g. Raspberry Pi SD card) for various environments.
+It does so by generating pre configured system OS images (e.g. Raspberry Pi SD card) for various environments.
 
 New nodes can be automatically provisioning by booting them with such an image.
 Users only provide minimal configuration such as the IP addresses, host names or access tokens for registration to a RIasC cluster.
@@ -84,7 +84,7 @@ Such a reboot will cause the `riasc-update.sh` script to be executed again and r
 
 ### Security considerations
 
-Having embedded devices in a securely guarded lab-environment automatically executing code fetched from a remote repository is undoubltedly a security risk which needs to be mitigated.
+Having embedded devices in a securely guarded lab-environment automatically executing code fetched from a remote repository is undoubtedly a security risk which needs to be mitigated.
 Hence, the `ansible-pull` command checks the fetch Git commit for an embedded PGP signature which is verified against a static white-list of PGP keys of the cluster operator.
 
 ## Further Reading

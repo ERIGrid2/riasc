@@ -34,15 +34,15 @@ In most cases the IA requires the current communication network state as an inpu
 For this purpose, RIasC implements network monitoring which periodically monitors several network metrics such as bandwidth, latency, packet loss, etc.
 
 The network monitoring feature of RIasC is based on the established perfSONAR tool suite and adapts it for its usage in a Kubernetes cluster.
-This includes the deployment of perfSONAR core components in the cluster itself as well as the execution of perfSONAR testpoints on the agent nodes throughout the participating research infrastructures.
+This includes the deployment of perfSONAR core components in the cluster itself as well as the execution of perfSONAR test points on the agent nodes throughout the participating research infrastructures.
 Last but not least, a dedicated Kubernetes operator is used to manage test schedules by the means of Kubernetes Custom Resource Definitions (CRD).
 
 ### Relation to other RIasC services
 
 The network monitoring service depends on two other RIasC services:
 
-- **IP Overlay Network:** In order to perform actual network tests, an IP connectivity between the testing endpoints is required. This connectivity can either be provided by the existing local or wide-area networks (the Internet). However, in most cases testpoints are either not located within the same local network or their direct communication is prohibited by firewalls. In theses cases the network monitoring tests can utilize the overlay network to tunnel the execution of tests through the overlay network.
-- **Time-synchronization:** Some network tests measure a one-way delay (OWD) between two testing endpoints. This is facilitated by sending a timestamp of the current time from one testpoint to another an calculating the difference upon receiption. However, this is only possible as long as both the local clocks of the sending and receiving endpoints are synchronized.
+- **IP Overlay Network:** In order to perform actual network tests, an IP connectivity between the testing endpoints is required. This connectivity can either be provided by the existing local or wide-area networks (the Internet). However, in most cases test points are either not located within the same local network or their direct communication is prohibited by firewalls. In theses cases the network monitoring tests can utilize the overlay network to tunnel the execution of tests through the overlay network.
+- **Time-synchronization:** Some network tests measure a one-way delay (OWD) between two testing endpoints. This is facilitated by sending a timestamp of the current time from one test point to another an calculating the difference upon reception. However, this is only possible as long as both the local clocks of the sending and receiving endpoints are synchronized.
 
 ### Collected Metrics
 
@@ -78,7 +78,7 @@ These central components are:
 
 These central components are deployed once within the Kubernetes cluster by the cluster operator.
 
-In addition, the lower part of the figure shows the software components which are running on each of the testpoints.
+In addition, the lower part of the figure shows the software components which are running on each of the test points.
 They are all packaged within a single container image.
 
 ## Implementation details
