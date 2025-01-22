@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>RIasC Blog</title>
-        <link>https://riasc.eu/blog</link>
+        <link>https://pipeacosta.github.io/riasc/riasc/blog</link>
         <description>RIasC Blog</description>
         <lastBuildDate>Tue, 09 Feb 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[Hello]]></title>
-            <link>https://riasc.eu/blog/hello-world</link>
+            <link>https://pipeacosta.github.io/riasc/riasc/blog/hello-world</link>
             <guid>hello-world</guid>
             <pubDate>Tue, 09 Feb 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to this blog. This is the new website of the RIasC project development in task JRA2.2 of the European H2020 project ERIGrid 2.0.]]></description>

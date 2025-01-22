@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://riasc.eu/blog</id>
+    <id>https://pipeacosta.github.io/riasc/riasc/blog</id>
     <title>RIasC Blog</title>
     <updated>2021-02-09T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://riasc.eu/blog"/>
+    <link rel="alternate" href="https://pipeacosta.github.io/riasc/riasc/blog"/>
     <subtitle>RIasC Blog</subtitle>
-    <icon>https://riasc.eu/img/logos/riasc.svg</icon>
+    <icon>https://pipeacosta.github.io/riasc/riasc/img/logos/riasc.svg</icon>
     <entry>
         <title type="html"><![CDATA[Hello]]></title>
         <id>hello-world</id>
-        <link href="https://riasc.eu/blog/hello-world"/>
+        <link href="https://pipeacosta.github.io/riasc/riasc/blog/hello-world"/>
         <updated>2021-02-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Welcome to this blog. This is the new website of the RIasC project development in task JRA2.2 of the European H2020 project ERIGrid 2.0.]]></summary>
         <content type="html"><![CDATA[<p>Welcome to this blog. This is the new website of the RIasC project development in task JRA2.2 of the <a href="https://erigrid2.eu" target="_blank" rel="noopener noreferrer">European H2020 project ERIGrid 2.0</a>.</p><p>The documentation is currently under construction. Come back later for more details!</p>]]></content>

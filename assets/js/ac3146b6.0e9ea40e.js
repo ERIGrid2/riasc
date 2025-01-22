@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkriasc=self.webpackChunkriasc||[]).push([[4336],{24997:function(l){l.exports=JSON.parse('{"hello":{"allTagsPath":"/riasc/blog/tags","slug":"/riasc/blog/tags/hello","name":"hello","count":1,"permalink":"/riasc/blog/tags/hello"}}')}}]);
