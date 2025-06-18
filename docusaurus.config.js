@@ -1,7 +1,7 @@
 module.exports = {
     title: 'RIasC',
     tagline: 'Research Infrastructure as Code',
-    url: 'https://riasc.eu',
+    url: 'https://www.riasc.de',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
